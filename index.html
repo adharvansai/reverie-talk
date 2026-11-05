@@ -378,6 +378,12 @@ html.print-pdf .grow-x { animation: none !important; }
 .sched-steps .step { padding: 20px 28px; margin-bottom: 16px; }
 .sched-steps .step .st { font-size: 32px; }
 .sched-steps .step .sd { font-size: 24px; }
+.why { position: absolute; left: 112px; top: 290px; width: 900px; height: 560px; display: grid; grid-template-rows: repeat(3, 1fr); gap: 20px; }
+.why .card { display: flex; align-items: center; gap: 32px; padding: 0 40px; }
+.why .rq { flex: none; width: 92px; height: 92px; border-radius: 20px; background: var(--grad); display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 30px rgba(36,21,47,.18); }
+.why .rq svg { width: 48px; height: 48px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.why .st { font-family: 'Instrument Sans'; font-weight: 600; font-size: 36px; letter-spacing: -0.01em; }
+.why .sd { font-size: 25px; line-height: 1.4; color: var(--deep-80); margin-top: 6px; text-wrap: pretty; }
 .sched-card { position: absolute; left: 1090px; right: 112px; top: 290px; height: 560px; }
 .sched-card .tbl { height: 506px; overflow: hidden; position: relative;
   -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 16%, #000 84%, transparent 100%);
@@ -660,17 +666,40 @@ html.print-pdf .grow-x { animation: none !important; }
 .stp .vc { position: absolute; height: 84px; display: flex; align-items: center; font-family: 'Instrument Sans'; font-weight: 600; font-size: 52px; letter-spacing: -0.02em; color: var(--deep); white-space: nowrap; }
 .stp .vc.v-gpu { top: 50px; }
 .stp .vc.v-dat { top: 190px; }
+.stp .vc.in.v-gpu { color: #fff; }
+.stp .vc .vu { font-family: 'DM Sans'; font-size: 28px; font-weight: 500; letter-spacing: 0; margin-left: 4px; }
 .reveal .o0 { opacity: 0; }
+.stp .ln i.dim, .stp .lg span.dim { opacity: .22; }
+.fixc.pf .card { position: relative; }
+.fixc.pf { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.fixc .card.ghost { background: transparent; border: 2px dashed rgba(36,21,47,.3); box-shadow: none; backdrop-filter: none; }
+.fmt { width: fit-content; margin-top: 26px; display: flex; align-items: center; gap: 26px; padding: 24px 32px; }
+.fmt .tag { flex: none; }
+.fmt b { flex: none; padding: 8px 22px; border-radius: 999px; background: var(--deep); color: #fff; font-family: 'Instrument Sans'; font-weight: 600; font-size: 30px; }
+.need .col { display: flex; flex-direction: column; }
+.need .col h3 { min-height: 0; margin-top: 40px; }
+.need .col { padding: 52px 50px; min-height: 500px; box-sizing: border-box; }
+.need .rq { width: 100px; height: 100px; border-radius: 20px; background: var(--grad); display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 30px rgba(36,21,47,.18); }
+.need .rq svg { width: 52px; height: 52px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .stp .lg { position: absolute; left: 250px; top: 360px; display: flex; gap: 40px; font-size: 24px; color: var(--deep-80); }
 .stp .lg span { display: inline-flex; align-items: center; gap: 12px; }
 .stp .lg i { display: inline-block; width: 36px; height: 18px; border-radius: 4px; }
 .stp .lg i.rd { background: var(--grad); } .stp .lg i.tf { background: linear-gradient(90deg, #A8AEDB, #7A9DDA); } .stp .lg i.co { background: #74609F; } .stp .lg i.qu { background: rgba(36,21,47,.42); }
-.fixc { position: absolute; left: 362px; right: 112px; top: 780px; }
-.fixc .card { padding: 26px 34px 28px; }
+.fixc { position: absolute; left: 112px; right: 112px; top: 266px; }
+.fixc .card { padding: 30px 38px 32px; min-height: 226px; box-sizing: border-box; }
 .fixc .tag { margin-bottom: 10px; }
 .fixc p { font-size: 28px; line-height: 1.45; color: var(--deep-80); }
+.fixc.pf p { font-size: 29px; line-height: 1.45; color: var(--deep); }
+.fixc.pf .card.pb { background: rgba(255,255,255,.5); border-left: 6px solid #E9579F; }
+.fixc.pf .tag { display: inline-flex; align-items: center; gap: 10px; padding: 7px 18px 7px 14px; border-radius: 999px; font-size: 20px; letter-spacing: .14em; margin-bottom: 18px; border: 2px solid transparent; }
+.fixc.pf .pb .tag { background: rgba(233,87,159,.16); color: #A8285F; }
+.fixc.pf .pb .tag::before { content: "\00d7"; font-size: 28px; line-height: .7; }
+.fixc.pf .fx .tag { background: var(--deep); color: #fff; }
+.fixc.pf .fx .tag::before { content: "\2713"; color: var(--pink); }
+.fixc.pf .fx.ghost .tag { background: transparent; border-color: rgba(36,21,47,.28); color: var(--deep-60); }
+.fixc.pf .fx.ghost .tag::before { color: var(--deep-60); }
 .fixc.two { display: grid; grid-template-columns: 1fr 1.6fr; gap: 30px; }
-.nogap { position: absolute; left: 860px; top: 368px; font-family: 'Instrument Sans'; font-weight: 600; font-size: 32px; letter-spacing: -0.01em; color: var(--deep); }
+.nogap { position: absolute; left: 860px; top: 632px; font-family: 'Instrument Sans'; font-weight: 600; font-size: 32px; letter-spacing: -0.01em; color: var(--deep); }
 
 .gotg { position: absolute; left: 112px; right: 112px; top: 290px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 34px; }
 .gotg .card { padding: 40px 36px 42px; min-height: 290px; box-sizing: border-box; }
@@ -697,6 +726,42 @@ html.print-pdf .grow-x { animation: none !important; }
 .sup .hbar .track { height: 60px; }
 html.print-pdf .lat .tl i { transform: none; animation: none !important; }
 html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
+
+:root { --good: #1E8C68; --good-bg: rgba(30,140,104,.13); --good-hi: #7FE0BE; --bad: #C8325A; --bad-bg: rgba(200,50,90,.12); --bad-hi: #FF7A98; }
+.good { color: var(--good); }
+.bad { color: var(--bad); }
+.h .good, .h .bad { font-weight: inherit; }
+.tag .bad { color: var(--bad); }
+.px-out .v { color: var(--bad); }
+.xnode .xmark::before, .xnode .xmark::after { background: var(--bad-hi); }
+.req .mk .yes::before { color: var(--good-hi); }
+.req .mk .no::before { color: var(--bad); }
+.dl .st.good { color: var(--good); }
+.dl .st.bad { color: var(--bad); }
+.stp .ln i.gw { background: repeating-linear-gradient(135deg, rgba(200,50,90,.42) 0 10px, rgba(200,50,90,.12) 10px 20px); }
+.fixc.pf .card.pb { border-left-color: var(--bad); }
+.fixc.pf .pb .tag { background: var(--bad-bg); color: var(--bad); }
+.fixc.pf .card.fx.done { background: rgba(255,255,255,.8); border-left: 6px solid var(--good); }
+.fixc.pf .fx.done .tag { background: var(--good); color: #fff; }
+.fixc.pf .fx.done .tag::before { color: #fff; }
+.nogap.good::before { content: "\2713"; margin-right: 12px; }
+.gotg .k::before { content: "\2713"; display: flex; align-items: center; justify-content: center; width: 46px; height: 46px; border-radius: 50%; background: var(--good-bg); color: var(--good); font-size: 26px; font-weight: 700; margin-bottom: 18px; }
+
+.lost.card.chosen { min-height: 250px; box-sizing: border-box; }
+.reveal .slides section .lost.fragment { transition: opacity .9s var(--ease), transform .9s var(--ease), visibility .9s; }
+.reveal .slides section .lost .ans.fragment { transform: translateY(18px); transition: opacity 1.2s var(--ease), transform 1.2s var(--ease), visibility 1.2s; }
+.reveal .slides section .lost .ans.fragment.visible { transform: none; }
+.lost .ans .lt { font-family: 'Instrument Sans'; font-weight: 600; font-size: 104px; letter-spacing: -0.03em; line-height: 1; }
+.lost .ans .ls { margin-top: 16px; font-size: 34px; line-height: 1.35; color: var(--deep-80); }
+.engineering-cases { position: absolute; left: 112px; right: 112px; top: 280px; display: grid; gap: 24px; }
+.engineering-case { display: grid; grid-template-columns: 380px 1fr 1fr 1fr; gap: 36px; align-items: start; padding: 30px 38px 32px; }
+.eng-label { font-size: 19px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--deep-60); margin-bottom: 10px; }
+.eng-title { font-family: 'Instrument Sans'; font-weight: 600; font-size: 34px; letter-spacing: -0.01em; line-height: 1.15; }
+.eng-cell b { display: inline-block; font-size: 17px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--deep-60); margin-bottom: 10px; }
+.eng-cell.pb b { color: var(--bad); }
+.eng-cell.fx b { color: var(--good); }
+.eng-cell p { font-size: 25px; line-height: 1.42; color: var(--deep); text-wrap: pretty; }
+.eng-cell code { font-family: 'JetBrains Mono', monospace; font-size: .9em; background: rgba(36,21,47,.07); padding: 1px 7px; border-radius: 6px; }
 </style>
 </head>
 <body>
@@ -727,7 +792,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <div class="by rise" style="--d:.75s">Adharvan Jakkula &middot; HPC Engineer, Zoox</div>
     </div>
   </div>
-  <aside class="notes">(~20 s) Hi everyone, I'm AJ. This talk is about the high-performance filesystem that sits between object storage and training, and what it took to remove it for a real production workload: reading straight from S3 with Lance, without giving back the performance.</aside>
+  <aside class="notes">Hey everyone, thanks for being here. I'm AJ, and I work on HPC Data and Storage Infrastructure at Zoox. Like a lot of teams, we rely on high-performance storage to keep our GPUs fed. But at our scale, that infrastructure brings its own pain: provisioning failures, hours of staging, and real cost. So we asked ourselves, what if we could eliminate that filesystem entirely and train directly from S3 without giving up performance? That's the journey I want to walk you through today.</aside>
 </section>
 
 <!-- 4. Agenda -->
@@ -743,10 +808,10 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <div class="row rise" style="--d:.25s"><div class="sq">2</div>What we explored<span class="hint">Taking out the filesystem</span></div>
       <div class="row rise" style="--d:.35s"><div class="sq">3</div>Straight from S3<span class="hint">It works, but slower</span></div>
       <div class="row rise" style="--d:.45s"><div class="sq">4</div>Fixing data loading<span class="hint">Closing the gap</span></div>
-      <div class="row rise" style="--d:.55s"><div class="sq">5</div>What we got<span class="hint">Results and what's next</span></div>
+      <div class="row rise" style="--d:.55s"><div class="sq">5</div>What we got<span class="hint">Results and engineering lessons</span></div>
     </div>
   </div>
-  <aside class="notes">(~15 s) Five parts. The workload and what it needs from storage. What we explored to take out the filesystem. What happened when we trained directly from S3. How we closed the gap in data loading. And what we got.</aside>
+  <aside class="notes">Here's the plan. First, I'll show you the workload we're dealing with. Then we'll look at what we tried, where things went wrong, and what finally got us the performance we wanted. <b>[CLICK]</b> So, let's start with the workload. What exactly are we dealing with here?</aside>
 </section>
 
 <!-- D1 -->
@@ -764,17 +829,16 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <div class="subtitle rise" style="--d:.35s">What training needs from storage</div>
     </div>
   </div>
-  <aside class="notes">(~3 s) Part one: the workload.</aside>
+  <aside class="notes">So let's talk about the workload for a second.</aside>
 </section>
 
-<!-- W. Workload -->
+<!-- W. The data -->
 <section>
   <div class="bg bg-a"></div>
   <div class="frame fr2" style="left:1050px;top:40px;width:1000px;height:900px;opacity:.28"></div>
   <div class="layer">
     <div class="wm"></div>
-    <h2 class="h rise" style="--d:.05s">The workload</h2>
-    <div class="sub rise" style="position:absolute;left:112px;top:226px;--d:.15s">A production perception model: detection and tracking.</div>
+    <h2 class="h rise" style="--d:.05s">The data</h2>
     <div class="mods">
       <div class="tag rise" style="--d:.2s;margin-bottom:22px">Every sample is one moment on the road</div>
       <div class="mgrid">
@@ -783,13 +847,14 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
         <div class="card m rise" style="--d:.5s"><i class="g rad"></i><div><b>Radar</b><span>points with velocity</span></div></div>
         <div class="card m rise" style="--d:.6s"><i class="g lab"></i><div><b>Labels</b><span>3D boxes and tracks</span></div></div>
       </div>
+      <div class="card fmt rise" style="--d:.7s"><div class="tag">Stored as</div><b>LMDB</b></div>
     </div>
     <div class="wbig">
       <div class="stat card rise" style="--d:.75s"><div class="bar"></div><div class="num">100s<span class="unit"> of TB</span></div><div class="lbl">of multimodal training data</div></div>
       <div class="stat card rise" style="--d:.9s"><div class="bar"></div><div class="num">Millions<span class="unit"> of samples</span></div><div class="lbl">in every training run</div></div>
     </div>
   </div>
-  <aside class="notes">(~30 s) The workload is a production perception model, the part of the stack that detects and tracks everything around the vehicle. Every training sample is one moment on the road: camera images all around the vehicle, lidar point clouds, radar points, and the labels. Together that's hundreds of terabytes of training data, and millions of samples in every training run.</aside>
+  <aside class="notes">We're talking about multimodal sensor data, millions of samples, hundreds of terabytes for a single training run. <b>[CLICK]</b> But it's not just the size, it's how we have to access it.</aside>
 </section>
 
 <!-- 7. The schedule -->
@@ -797,12 +862,11 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
   <div class="bg bg-d"></div>
   <div class="layer">
     <div class="wm"></div>
-    <h2 class="h rise" style="--d:.05s">The read order is computed before step 0</h2>
-    <div class="plan sched-steps">
-      <div class="step card rise" style="--d:.2s"><div class="n">1</div><div><div class="st">Tag every frame, offline</div><div class="sd">weather, crowding, agent types, label quality, from ground truth</div></div></div>
-      <div class="step card rise" style="--d:.35s"><div class="n">2</div><div><div class="st">Weight the tags</div><div class="sd">tags overlap; a frame's weight is the product of its tags, tempered</div></div></div>
-      <div class="step card rise" style="--d:.5s"><div class="n">3</div><div><div class="st">One global weighted draw</div><div class="sd">across every frame of every dataset, at once</div></div></div>
-      <div class="step card rise" style="--d:.65s"><div class="n">4</div><div><div class="st">Write the schedule</div><div class="sd">rank, step and frame for every sample, fixed before training starts</div></div></div>
+    <h2 class="h rise" style="--d:.05s">The read order is precomputed before training</h2>
+    <div class="why">
+      <div class="card rise" style="--d:0.20s"><i class="rq"><svg viewBox="0 0 24 24"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></i><div><div class="st">True global shuffle</div><div class="sd">Any frame, from anywhere in the dataset, can land in any step.</div></div></div>
+      <div class="card rise" style="--d:0.35s"><i class="rq"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></i><div><div class="st">Custom batch composition</div><div class="sd">Correlated frames, chained to a fixed length, go into a batch together.</div></div></div>
+      <div class="card rise" style="--d:0.50s"><i class="rq"><svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg></i><div><div class="st">Determinism</div><div class="sd">Replay the exact order: the same frames in every step, on every rank, every time.</div></div></div>
     </div>
     <div class="code sched-card pop" style="--d:.5s">
       <div class="bar3"><i></i><i></i><i></i><span>SCHEDULE</span></div>
@@ -810,7 +874,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <div class="tbl"><div class="rows"><div class="r"><span class="a">0</span><span class="b">0</span><span class="c">a4c123…@1719179419893</span></div><div class="r"><span class="a">1</span><span class="b">0</span><span class="c">12dd27…@1725979544025</span></div><div class="r"><span class="a">2</span><span class="b">0</span><span class="c">d1371c…@1717949539216</span></div><div class="r"><span class="a">3</span><span class="b">0</span><span class="c">49d439…@1719929179284</span></div><div class="r"><span class="a">4</span><span class="b">0</span><span class="c">36b321…@1719658625969</span></div><div class="r"><span class="a">5</span><span class="b">0</span><span class="c">fdaeeb…@1718287489453</span></div><div class="r"><span class="a">6</span><span class="b">0</span><span class="c">5729fa…@1724427910944</span></div><div class="r"><span class="a">7</span><span class="b">0</span><span class="c">923d5a…@1723395047810</span></div><div class="r"><span class="a">0</span><span class="b">1</span><span class="c">12aabf…@1718959386986</span></div><div class="r"><span class="a">1</span><span class="b">1</span><span class="c">28f219…@1724825107365</span></div><div class="r"><span class="a">2</span><span class="b">1</span><span class="c">9cb0eb…@1721797889912</span></div><div class="r"><span class="a">3</span><span class="b">1</span><span class="c">16947c…@1725037696176</span></div><div class="r"><span class="a">4</span><span class="b">1</span><span class="c">25ec84…@1724813747417</span></div><div class="r"><span class="a">5</span><span class="b">1</span><span class="c">8dbc74…@1717356416554</span></div><div class="r"><span class="a">6</span><span class="b">1</span><span class="c">4770f5…@1722423455429</span></div><div class="r"><span class="a">7</span><span class="b">1</span><span class="c">04dba4…@1721526864997</span></div><div class="r"><span class="a">0</span><span class="b">2</span><span class="c">cccc3f…@1724019220235</span></div><div class="r"><span class="a">1</span><span class="b">2</span><span class="c">1626e5…@1721767105785</span></div><div class="r"><span class="a">2</span><span class="b">2</span><span class="c">13043b…@1719635981472</span></div><div class="r"><span class="a">3</span><span class="b">2</span><span class="c">26c48b…@1723881736719</span></div><div class="r"><span class="a">4</span><span class="b">2</span><span class="c">f33fef…@1723373021323</span></div><div class="r"><span class="a">5</span><span class="b">2</span><span class="c">243a8f…@1717099195379</span></div><div class="r"><span class="a">6</span><span class="b">2</span><span class="c">b40928…@1723521464856</span></div><div class="r"><span class="a">7</span><span class="b">2</span><span class="c">5b7a76…@1720462081170</span></div><div class="r"><span class="a">0</span><span class="b">0</span><span class="c">a4c123…@1719179419893</span></div><div class="r"><span class="a">1</span><span class="b">0</span><span class="c">12dd27…@1725979544025</span></div><div class="r"><span class="a">2</span><span class="b">0</span><span class="c">d1371c…@1717949539216</span></div><div class="r"><span class="a">3</span><span class="b">0</span><span class="c">49d439…@1719929179284</span></div><div class="r"><span class="a">4</span><span class="b">0</span><span class="c">36b321…@1719658625969</span></div><div class="r"><span class="a">5</span><span class="b">0</span><span class="c">fdaeeb…@1718287489453</span></div><div class="r"><span class="a">6</span><span class="b">0</span><span class="c">5729fa…@1724427910944</span></div><div class="r"><span class="a">7</span><span class="b">0</span><span class="c">923d5a…@1723395047810</span></div><div class="r"><span class="a">0</span><span class="b">1</span><span class="c">12aabf…@1718959386986</span></div><div class="r"><span class="a">1</span><span class="b">1</span><span class="c">28f219…@1724825107365</span></div><div class="r"><span class="a">2</span><span class="b">1</span><span class="c">9cb0eb…@1721797889912</span></div><div class="r"><span class="a">3</span><span class="b">1</span><span class="c">16947c…@1725037696176</span></div><div class="r"><span class="a">4</span><span class="b">1</span><span class="c">25ec84…@1724813747417</span></div><div class="r"><span class="a">5</span><span class="b">1</span><span class="c">8dbc74…@1717356416554</span></div><div class="r"><span class="a">6</span><span class="b">1</span><span class="c">4770f5…@1722423455429</span></div><div class="r"><span class="a">7</span><span class="b">1</span><span class="c">04dba4…@1721526864997</span></div><div class="r"><span class="a">0</span><span class="b">2</span><span class="c">cccc3f…@1724019220235</span></div><div class="r"><span class="a">1</span><span class="b">2</span><span class="c">1626e5…@1721767105785</span></div><div class="r"><span class="a">2</span><span class="b">2</span><span class="c">13043b…@1719635981472</span></div><div class="r"><span class="a">3</span><span class="b">2</span><span class="c">26c48b…@1723881736719</span></div><div class="r"><span class="a">4</span><span class="b">2</span><span class="c">f33fef…@1723373021323</span></div><div class="r"><span class="a">5</span><span class="b">2</span><span class="c">243a8f…@1717099195379</span></div><div class="r"><span class="a">6</span><span class="b">2</span><span class="c">b40928…@1723521464856</span></div><div class="r"><span class="a">7</span><span class="b">2</span><span class="c">5b7a76…@1720462081170</span></div></div></div>
     </div>
   </div>
-  <aside class="notes">(~40 s) The other thing that matters is how the model picks what to read. It doesn't shuffle online. Offline, every frame gets tagged from its ground truth: weather, crowding, which kinds of agents are in it, label quality. Tags overlap, each one has a weight, and a frame's weight is the product of its tags. Then one global weighted draw across every dataset writes a schedule: for every rank and every step, which frame to read. It's fixed before training starts, and it's how the model team tunes the data mix, so storage must not change it.</aside>
+  <aside class="notes">We need a true global shuffle, we need correlated windows to stay together, and we need deterministic replay. So we pre-generate the full schedule ahead of training. <b>[PAUSE]</b> That schedule tells each rank exactly what it needs and when.</aside>
 </section>
 
 <!-- S. Today's setup -->
@@ -832,7 +896,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
     </div>
     <div class="bracket rise" style="left:466px;width:634px;top:765px;--d:1.9s"><span>set up again for every run</span></div>
   </div>
-  <aside class="notes">(~35 s) Here's how training reads data today. S3 is the system of record, there for durability. LMDB is the format: each frame is one record under its key, so a random read is a quick lookup, which is exactly what a precomputed schedule needs. But LMDB reads through mmap, so it needs a low-latency POSIX filesystem, and S3 isn't one. So for every run, a staging step provisions FSx for Lustre, imports the data, and LMDB reads it from there.</aside>
+  <aside class="notes">Now, let's look at how we support this workload today. S3 is our system of record because it's durable and cost effective at this scale. For training, we historically chose LMDB because it gave us efficient key value random access to individual samples, which matched our schedule well. But LMDB relies on memory-mapped files, so it needs both POSIX semantics and fast, low-latency access. That's where FSx for Lustre comes in. We stage our datasets from S3 onto FSx, giving LMDB the high-performance filesystem it expects. And for a long time, that worked well. But as we scaled, that extra layer started becoming a problem.</aside>
 </section>
 
 <!-- P. The price -->
@@ -856,7 +920,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <div class="card rise" style="--d:1s"><div class="v">~5× cost</div><div class="l">nearly 5× the regular cost goes to filesystem overhead</div></div>
     </div>
   </div>
-  <aside class="notes">(~35 s) And that detour has a price. Every run has to provision a filesystem and stage its data before training can start. When a run needs a new filesystem, about one in four never starts, because the capacity isn't there. When it does work, staging can take hours before the first training step. And it's expensive: nearly five times the regular cost goes to filesystem overhead. All of it for a copy of data that's already in S3.</aside>
+  <aside class="notes">That extra layer has real costs. Every run needs fresh FSx capacity and hours of staging before the first step. About one in four runs that need new capacity fail to start. Even when it works, we spend hours just staging. And nearly five times the regular spend goes to filesystem overhead. All to copy data that already lives in S3.</aside>
 </section>
 
 <!-- 12. The question -->
@@ -870,7 +934,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <div class="display rise" style="--d:.2s">Take out the filesystem. Train <span class="hl">directly from S3</span>, with no loss in performance.</div>
     </div>
   </div>
-  <aside class="notes">(~10 s) So the goal was simple: take out the filesystem and train directly from S3, with no loss in performance.</aside>
+  <aside class="notes">Looking at these problems, the obvious question was, why not train directly from S3? But FSx is built for high throughput and low latency, and S3 is object storage with a different access model. So naturally, we were skeptical. We might get it to run, but could we do it without a significant performance hit? There's no point in saving on storage if we pay more in compute. So the goal became train from S3 without sacrificing training performance.</aside>
 </section>
 
 <!-- D2 -->
@@ -888,7 +952,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <div class="subtitle rise" style="--d:.35s">Taking out the filesystem</div>
     </div>
   </div>
-  <aside class="notes">(~3 s) Part two: what we explored.</aside>
+  <aside class="notes">So we started with the simplest thing we could think of.</aside>
 </section>
 
 <!-- 13. Just mount S3 -->
@@ -898,19 +962,19 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
     <div class="wm"></div>
     <h2 class="h rise" style="--d:.05s">First try: keep LMDB, just mount S3</h2>
     <div class="fail">
-      <div class="node card rise" style="--d:.2s"><div class="nt">LMDB on S3</div><div class="nd">same shards, no filesystem</div></div>
+      <div class="node card rise" style="--d:.2s"><div class="nt">LMDB on S3</div><div class="nd">same LMDB data, no FSx</div></div>
       <div class="link l1 rise" style="--d:.3s"></div>
-      <div class="node card rise" style="--d:.4s"><div class="nt">S3 mount</div><div class="nd">Mountpoint for S3, a POSIX view of the bucket</div></div>
+      <div class="node card rise" style="--d:.4s"><div class="nt">S3 mount</div><div class="nd">Mountpoint for S3 exposes file-like access</div></div>
       <div class="link l2 rise" style="--d:.5s"></div>
-      <div class="node card rise" style="--d:.6s"><div class="nt">mmap read</div><div class="nd">every read is a page fault</div></div>
+      <div class="node card rise" style="--d:.6s"><div class="nt">mmap required</div><div class="nd">LMDB relies on memory mapping</div></div>
       <div class="link l3 rise" style="--d:.7s"></div>
-      <div class="node card xnode pop" style="--d:1s"><div class="xmark"></div><div class="nt">Run failed</div><div class="nd">a storage hiccup became a blocker</div></div>
+      <div class="node card xnode pop" style="--d:1s"><div class="xmark"></div><div class="nt">Incompatible</div><div class="nd">Mountpoint for S3 does not support mmap</div></div>
     </div>
     <div class="lesson">
-      <div class="display rise" style="--d:1.3s">S3 wasn't the obstacle. A format built around mmap was.</div>
+      <div class="display rise" style="--d:1.3s">The mount could not provide the mmap behavior LMDB needs.</div>
     </div>
   </div>
-  <aside class="notes">(~30 s) The obvious first move is to change nothing: keep LMDB and mount S3, with Mountpoint for S3 giving LMDB a POSIX view of the bucket. LMDB reads through mmap, so every read is a page fault, and any S3 hiccup during a page fault failed the run. S3 wasn't the obstacle. A format built around mmap was.</aside>
+  <aside class="notes">We kept LMDB and tried Mountpoint for S3. It looked easy, but LMDB needs memory mapping, and Mountpoint doesn't support that. So we couldn't just swap the filesystem. We had to rethink the format.</aside>
 </section>
 
 <!-- F. The format had to change -->
@@ -941,7 +1005,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       </div>
     </div>
   </div>
-  <aside class="notes">(~35 s) So the format had to change, and the workload tells you what it needs. One: it has to live on S3, reading straight from object storage with no local copy and no mount. LMDB fails that one. Two: random access to any sample, from hundreds of readers at once. Three: it has to follow our precomputed schedule, untouched. Lance does all three, so that's what we chose. We use it purely as a training format here: no vectors, no search.</aside>
+  <aside class="notes">So the format had to change. What would that take?</aside>
 </section>
 
 <!-- D3 -->
@@ -959,7 +1023,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <div class="subtitle rise" style="--d:.35s">It works, but slower</div>
     </div>
   </div>
-  <aside class="notes">(~3 s) Part three: training directly from S3.</aside>
+  <aside class="notes">So we realized the problem wasn't just the filesystem. We needed a different data format, but we didn't want to throw away what was already working. LMDB gave us really good random access, and we had a schedule we wanted to preserve. We just needed it to work directly with S3. That's when Lance caught our eye. It looked like it could give us that access pattern without the filesystem underneath, so we converted and tried it.</aside>
 </section>
 
 <!-- L. Slower -->
@@ -967,21 +1031,21 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
   <div class="bg bg-g"></div>
   <div class="layer">
     <div class="wm"></div>
-    <h2 class="h rise" style="--d:.05s">It works, but every step is 2.8&times; slower</h2>
+    <h2 class="h rise" style="--d:.05s">Training throughput dropped by <span class="bad">~65%</span></h2>
     <div class="sub rise" style="position:absolute;left:112px;top:226px;--d:.15s">Same model, same schedule, same hardware.</div>
     <div class="stp">
-      <div class="tag bt rise" style="--d:.2s">Time per training step</div>
+      <div class="tag bt rise" style="--d:1.2s">Time per training step <span class="bad">(2.8&times; longer)</span></div>
       <div class="rl rise" style="top:70px;--d:.25s">FSx + LMDB</div>
       <div class="rl rise" style="top:214px;--d:.35s">S3 + Lance</div>
       <div class="lanes">
         <div class="ln gpu rise" style="--d:.25s"><i class="gc grow-x" style="left:0;width:30%;--d:.45s"></i></div>
         <div class="ln dat rise" style="--d:.35s"><i class="lb grow-x" style="left:0;width:84%;--d:.6s"></i></div>
-        <div class="vc v-gpu rise" style="left:calc(30% + 22px);--d:1.1s">1&times;</div>
-        <div class="vc v-dat rise" style="left:calc(84% + 22px);--d:1.5s">2.8&times;</div>
+        <div class="vc v-gpu in rise" style="right:calc(70% + 24px);--d:1.1s">1&times;</div>
+        <div class="vc v-dat in rise" style="right:calc(16% + 24px);--d:1.5s">2.8&times;<span class="vu"> step time</span></div>
       </div>
     </div>
   </div>
-  <aside class="notes">(~25 s) We converted the datasets and pointed training at S3. It worked: the model trained correctly on the same schedule. And every step was 2.8 times slower. The tempting conclusion is the one everyone reaches for: object storage can't feed GPUs. That conclusion was wrong.</aside>
+  <aside class="notes">And this time it actually worked. <b>[PAUSE]</b> But then we measured it. Our training throughput dropped by about 65%. <b>[PAUSE]</b> Put differently, training was taking almost three times as long.</aside>
 </section>
 
 <!-- 20. How a data loader feeds a GPU -->
@@ -1005,7 +1069,6 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
         <div class="arr"></div>
         <div class="gpu">GPU<small>waiting</small></div>
       </div>
-      <div class="st">Expensive samples. The GPU waits.</div>
     </div>
     <div class="dl right light card chosen rise" style="--d:.45s">
       <div class="tag" style="color:var(--deep)">What training needs</div>
@@ -1022,7 +1085,6 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
         <div class="arr"></div>
         <div class="gpu">GPU<small>busy</small></div>
       </div>
-      <div class="st">Cheap samples. The queue stays full.</div>
     </div>
     <div class="eq card strong rise" style="--d:.9s">
       <span class="t">Loader supply</span><span class="op">=</span>
@@ -1031,7 +1093,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <span class="t">what the GPUs consume</span>
     </div>
   </div>
-  <aside class="notes">(~40 s) The GPUs weren't the problem. They were starved. A data loader runs many workers, and each one builds samples and puts batches in a queue in front of the GPU. When samples are expensive, the workers can't refill the queue and the GPU waits. That was us. What training needs is the other picture: cheap samples, a full queue, and the GPU as the bottleneck. So the number that matters is how fast the workers can serve batches, against how fast the GPUs consume them. The fix had to be in data loading.</aside>
+  <aside class="notes">So before we talk about what went wrong, here's how data loading works for us. The GPU trains on one batch while a group of workers fetch and prepare the next ones. We keep a queue, like a buffer, so ideally there's always another batch ready when the GPU finishes. <b>[GESTURE FIRST DIAGRAM]</b> But here's what we saw. With Lance on S3, preparing batches sometimes took longer, the queue drained, and the GPU had nothing to do. <b>[GESTURE SECOND DIAGRAM]</b> So the issue wasn't that S3 can't store the data. It was how efficiently we were getting it into the GPU. That's what we needed to fix.</aside>
 </section>
 
 <!-- D4 -->
@@ -1049,23 +1111,24 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <div class="subtitle rise" style="--d:.35s">Closing the gap</div>
     </div>
   </div>
-  <aside class="notes">(~3 s) Part four: closing the gap in data loading.</aside>
+  <aside class="notes">At this point, we knew two things. We could train from S3, but we were still 2.8 times slower, and now we knew why. The GPUs were waiting on data. So the question became, how do we keep those GPUs busy? Instead of making S3 behave like Lustre, we rethought the data loader. We found two opportunities, how we read data from S3 and how we processed it afterwards, and fixing those made all the difference. Let's start with the first.</aside>
 </section>
 
-<!-- B0. The 2.8x, again -->
+<!-- B0. The slowdown, again -->
 <section data-auto-animate data-auto-animate-duration="1.2">
   <div class="bg bg-d" data-id="bg"></div>
   <div class="layer">
     <div class="wm" data-id="wm"></div>
-    <h2 class="h" data-id="t-h">Every step is 2.8&times; slower</h2>
+    <h2 class="h" data-id="t-h">Training throughput dropped by <span class="bad">~65%</span></h2>
     <div class="sub" data-id="b-sub" style="position:absolute;left:112px;top:226px">Same model, same schedule, same hardware.</div>
-    <div class="stp">
-      <div class="tag bt" data-id="b-tag">Time per training step</div>
+    <div class="stp" data-id="stp">
+      <div class="tag bt" data-id="b-tag">Time per training step <span class="bad">(2.8&times; longer)</span></div>
       <div class="rl" data-id="rb1" style="top:70px">FSx + LMDB</div>
       <div class="rl" data-id="rb2" style="top:214px">S3 + Lance</div>
       <div class="lanes">
-        <div class="ln gpu" data-id="ln-gpu"><i class="gc" data-id="gc" style="left:0;width:30.0%"><span class="o0" data-id="gcs">compute one step</span></i></div>
-        <div class="ln dat" data-id="ln-dat"><i class="lb" data-id="lb" style="left:0;width:84.0%"></i>
+        <div class="ln gpu" data-id="ln-gpu"><i class="gc" data-id="gc" style="left:0;width:30.0%"><span class="o0" data-id="gcs">GPU busy</span></i></div>
+        <div class="ln dat" data-id="ln-dat">
+          <i class="lb" data-id="lb" style="left:0;width:84.0%"></i>
           <i class="rd" data-id="r1" style="left:0.0%;width:0"></i>
           <i class="rd" data-id="r2" style="left:8.0%;width:0"></i>
           <i class="rd" data-id="r3" style="left:16.0%;width:0"></i>
@@ -1077,12 +1140,12 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
           <i class="co" data-id="c" style="left:76.0%;width:0"></i>
           <i class="qu" data-id="q" style="left:80.4%;width:0"></i>
         </div>
-        <div class="vc v-gpu" data-id="v1" style="left:calc(30% + 22px)">1&times;</div>
-        <div class="vc v-dat" data-id="v2" style="left:calc(84% + 22px)">2.8&times;</div>
+        <div class="vc v-gpu in" data-id="v1" style="right:calc(70% + 24px)">1&times;</div>
+        <div class="vc v-dat in" data-id="v2" style="right:calc(16% + 24px)">2.8&times;<span class="vu"> step time</span></div>
       </div>
     </div>
   </div>
-  <aside class="notes">(~15 s) Back to that 2.8. On FSx, a step takes as long as the GPU needs to compute it. Straight from S3, a step takes as long as data loading needs to serve the next batch. So let's open up one step.</aside>
+  <aside class="notes">We saw the slower training step. Let's trace the waiting time to the data loader.</aside>
 </section>
 
 <!-- T1. Why the GPU waits -->
@@ -1092,14 +1155,14 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
     <div class="wm" data-id="wm"></div>
     <h2 class="h" data-id="t-h">Why the GPU waits</h2>
     <div class="sub o0" data-id="b-sub" style="position:absolute;left:112px;top:226px">Same model, same schedule, same hardware.</div>
-    <div class="stp">
-      <div class="tag bt o0" data-id="b-tag">Time per training step</div>
+    <div class="stp" data-id="stp" style="top:560px">
+      <div class="tag bt o0" data-id="b-tag">Time per training step <span class="bad">(2.8&times; longer)</span></div>
       <div class="rl o0" data-id="rb1" style="top:70px">FSx + LMDB</div>
       <div class="rl o0" data-id="rb2" style="top:214px">S3 + Lance</div>
       <div class="rl" data-id="rl1" style="top:70px" data-auto-animate-delay=".5">GPU</div>
       <div class="rl" data-id="rl2" style="top:214px" data-auto-animate-delay=".5">Data loading<small>one batch</small></div>
       <div class="lanes">
-        <div class="ln gpu" data-id="ln-gpu"><i class="gc" data-id="gc" style="left:0;width:30.0%"><span data-id="gcs" data-auto-animate-delay=".4">compute one step</span></i><i class="gw" data-id="gw" style="left:30.0%;width:54.0%" data-auto-animate-delay="1.5" data-auto-animate-duration=".8"><span>GPU waiting</span></i></div>
+        <div class="ln gpu" data-id="ln-gpu"><i class="gc" data-id="gc" style="left:0;width:30.0%"><span data-id="gcs" data-auto-animate-delay=".4">GPU busy</span></i><i class="gw" data-id="gw" style="left:30.0%;width:54.0%" data-auto-animate-delay="1.5" data-auto-animate-duration=".8"><span>GPU waiting</span></i></div>
         <div class="ln dat" data-id="ln-dat">
           <i class="lb o0" data-id="lb" style="left:0;width:84.0%" data-auto-animate-delay="1.3" data-auto-animate-duration=".7"></i>
           <i class="rd" data-id="r1" style="left:0.0%;width:7.6%" data-auto-animate-delay="0.25" data-auto-animate-duration=".7"></i>
@@ -1115,60 +1178,127 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
         </div>
         <div class="mk need" data-id="need" style="left:30.0%" data-auto-animate-delay="1.5" data-auto-animate-duration=".6"><span>GPU needs the next batch</span></div>
         <div class="mk ready" data-id="ready" style="left:84.0%" data-auto-animate-delay="1.7" data-auto-animate-duration=".6"><span>batch ready</span></div>
-        <div class="vc v-gpu o0" data-id="v1" style="left:calc(30% + 22px)" data-auto-animate-duration=".4">1&times;</div>
-        <div class="vc v-dat o0" data-id="v2" style="left:calc(84% + 22px)" data-auto-animate-duration=".4">2.8&times;</div>
+        <div class="vc v-gpu in o0" data-id="v1" style="right:calc(70% + 24px)" data-auto-animate-duration=".4">1&times;</div>
+        <div class="vc v-dat in o0" data-id="v2" style="right:calc(16% + 24px)" data-auto-animate-duration=".4">2.8&times;<span class="vu"> step time</span></div>
       </div>
-      <div class="lg" data-id="lg" data-auto-animate-delay="1.4"><span><i class="rd"></i>read a sample &times; n</span><span><i class="tf"></i>transform it &times; n</span><span><i class="co"></i>collate the batch</span><span><i class="qu"></i>hand it to the GPU</span></div>
+      <div class="lg" data-id="lg" data-auto-animate-delay="1.4"><span data-id="lg-rd"><i class="rd"></i>read a sample &times; n</span><span data-id="lg-tf"><i class="tf"></i>transform it &times; n</span><span data-id="lg-co"><i class="co"></i>collate the batch</span><span data-id="lg-qu"><i class="qu"></i>hand it to the GPU</span></div>
     </div>
-    <div class="fixc" data-id="fx0" data-auto-animate-delay="1.8" data-auto-animate-duration=".7"><div class="card"><div class="tag">One training step</div><p>For every batch, the loader reads n samples, transforms each one, collates them and hands the batch over. Serving one batch took far longer than the GPU's step.</p></div></div>
+    <div class="fixc" data-id="fx0" data-auto-animate-delay="1.8" data-auto-animate-duration=".7"><div class="card"><div class="tag">One training step</div><p>For every batch, the loader reads n samples, transforms each one, collates them and hands the batch over. Batches arrived far slower than the GPU could use them.</p></div></div>
   </div>
-  <aside class="notes">(~40 s) Here's that step, opened up. The short bar is the GPU computing the step. The long bar is data loading serving the next batch: read n samples, where n is the batch size, transform each one, collate them into a batch, and hand it to the GPU. Before any fixes, serving a batch took far longer than the GPU's step, and that whole stretch is the GPU waiting. To close the gap, every piece of that bar has to shrink.</aside>
+  <aside class="notes">The GPU finishes its work, but the next batch is not ready. Each sample is read, transformed, and collated before the GPU can continue.</aside>
 </section>
 
-<!-- T2. Fix the reads -->
+<!-- P1. Problem 1: the reads -->
+<section data-auto-animate data-auto-animate-duration="1.0">
+  <div class="bg bg-d" data-id="bg"></div>
+  <div class="layer">
+    <div class="wm" data-id="wm"></div>
+    <h2 class="h" data-id="t-h">Problem 1: the reads</h2>
+    <div class="stp" data-id="stp" style="top:560px">
+      <div class="rl" data-id="rl1" style="top:70px">GPU</div>
+      <div class="rl" data-id="rl2" style="top:214px">Data loading<small>one batch</small></div>
+      <div class="lanes">
+        <div class="ln gpu" data-id="ln-gpu"><i class="gc" data-id="gc" style="left:0;width:30.0%"><span data-id="gcs">GPU busy</span></i><i class="gw" data-id="gw" style="left:30.0%;width:54.0%"><span>GPU waiting</span></i></div>
+        <div class="ln dat" data-id="ln-dat">
+          <i class="rd" data-id="r1" style="left:0.0%;width:7.6%"></i>
+          <i class="rd" data-id="r2" style="left:8.0%;width:7.6%"></i>
+          <i class="rd" data-id="r3" style="left:16.0%;width:7.6%"></i>
+          <i class="rd" data-id="r4" style="left:24.0%;width:7.6%"></i>
+          <i class="tf dim" data-id="t1" style="left:32.0%;width:10.6%"></i>
+          <i class="tf dim" data-id="t2" style="left:43.0%;width:10.6%"></i>
+          <i class="tf dim" data-id="t3" style="left:54.0%;width:10.6%"></i>
+          <i class="tf dim" data-id="t4" style="left:65.0%;width:10.6%"></i>
+          <i class="co dim" data-id="c" style="left:76.0%;width:4.0%"></i>
+          <i class="qu dim" data-id="q" style="left:80.4%;width:3.6%"></i>
+        </div>
+        <div class="mk need" data-id="need" style="left:30.0%"><span>GPU needs the next batch</span></div>
+        <div class="mk ready" data-id="ready" style="left:84.0%"><span>batch ready</span></div>
+      </div>
+      <div class="lg" data-id="lg"><span data-id="lg-rd"><i class="rd"></i>read a sample &times; n</span><span data-id="lg-tf" class="dim"><i class="tf"></i>transform it &times; n</span><span data-id="lg-co" class="dim"><i class="co"></i>collate the batch</span><span data-id="lg-qu" class="dim"><i class="qu"></i>hand it to the GPU</span></div>
+    </div>
+    <div class="fixc o0" data-id="fx0"><div class="card"><div class="tag">One training step</div><p>For every batch, the loader reads n samples, transforms each one, collates them and hands the batch over. Batches arrived far slower than the GPU could use them.</p></div></div>
+    <div class="fixc pf" data-id="pf"><div class="card pb" data-id="pbc"><div class="tag" data-id="pbt">Problem</div><p>Each sample was downloaded from S3 only when it was needed, so every read waited on S3.</p></div><div class="card fx ghost" data-id="fxc"><div class="tag" data-id="fxt">Fix</div><p class="o0">Stream samples from S3 into memory ahead of time, following our pre-generated schedule, with many reads in flight across workers.</p></div></div>
+  </div>
+  <aside class="notes">First we looked at how we read from S3. We already know exactly which samples we need ahead of time, but we weren't really using that. We waited for each request, and those little latencies added up. <b>[CLICK]</b></aside>
+</section>
+
+<!-- F1. Fix 1: stream the reads -->
 <section data-auto-animate data-auto-animate-duration="1.2">
   <div class="bg bg-d" data-id="bg"></div>
   <div class="layer">
     <div class="wm" data-id="wm"></div>
     <h2 class="h" data-id="t-h">Fix 1: stream the reads</h2>
-    <div class="stp">
+    <div class="stp" data-id="stp" style="top:560px">
       <div class="rl" data-id="rl1" style="top:70px">GPU</div>
       <div class="rl" data-id="rl2" style="top:214px">Data loading<small>one batch</small></div>
       <div class="lanes">
-        <div class="ln gpu" data-id="ln-gpu"><i class="gc" data-id="gc" style="left:0;width:30.0%;--d:.3s"><span data-id="gcs">compute one step</span></i><i class="gw" data-id="gw" style="left:30.0%;width:31.0%"><span>GPU waiting</span></i></div>
+        <div class="ln gpu" data-id="ln-gpu"><i class="gc" data-id="gc" style="left:0;width:30.0%"><span data-id="gcs">GPU busy</span></i><i class="gw" data-id="gw" style="left:30.0%;width:31.0%"><span>GPU waiting</span></i></div>
         <div class="ln dat" data-id="ln-dat">
-          <i class="rd" data-id="r1" style="left:0.0%;width:2.0%;--d:0.50s"></i>
-          <i class="rd" data-id="r2" style="left:2.4%;width:2.0%;--d:0.62s"></i>
-          <i class="rd" data-id="r3" style="left:4.8%;width:2.0%;--d:0.74s"></i>
-          <i class="rd" data-id="r4" style="left:7.2%;width:2.0%;--d:0.86s"></i>
-          <i class="tf" data-id="t1" style="left:9.6%;width:10.6%;--d:0.98s"></i>
-          <i class="tf" data-id="t2" style="left:20.6%;width:10.6%;--d:1.10s"></i>
-          <i class="tf" data-id="t3" style="left:31.6%;width:10.6%;--d:1.22s"></i>
-          <i class="tf" data-id="t4" style="left:42.6%;width:10.6%;--d:1.34s"></i>
-          <i class="co" data-id="c" style="left:53.6%;width:4.0%;--d:1.46s"></i>
-          <i class="qu" data-id="q" style="left:58.0%;width:3.0%;--d:1.58s"></i>
+          <i class="rd" data-id="r1" style="left:0.0%;width:2.0%"></i>
+          <i class="rd" data-id="r2" style="left:2.4%;width:2.0%"></i>
+          <i class="rd" data-id="r3" style="left:4.8%;width:2.0%"></i>
+          <i class="rd" data-id="r4" style="left:7.2%;width:2.0%"></i>
+          <i class="tf" data-id="t1" style="left:9.6%;width:10.6%"></i>
+          <i class="tf" data-id="t2" style="left:20.6%;width:10.6%"></i>
+          <i class="tf" data-id="t3" style="left:31.6%;width:10.6%"></i>
+          <i class="tf" data-id="t4" style="left:42.6%;width:10.6%"></i>
+          <i class="co" data-id="c" style="left:53.6%;width:4.0%"></i>
+          <i class="qu" data-id="q" style="left:58.0%;width:3.0%"></i>
         </div>
         <div class="mk need" data-id="need" style="left:30.0%"><span>GPU needs the next batch</span></div>
         <div class="mk ready" data-id="ready" style="left:61.0%"><span>batch ready</span></div>
       </div>
-      <div class="lg" data-id="lg"><span><i class="rd"></i>read a sample &times; n</span><span><i class="tf"></i>transform it &times; n</span><span><i class="co"></i>collate the batch</span><span><i class="qu"></i>hand it to the GPU</span></div>
+      <div class="lg" data-id="lg"><span data-id="lg-rd"><i class="rd"></i>read a sample &times; n</span><span data-id="lg-tf"><i class="tf"></i>transform it &times; n</span><span data-id="lg-co"><i class="co"></i>collate the batch</span><span data-id="lg-qu"><i class="qu"></i>hand it to the GPU</span></div>
     </div>
-    <div class="fixc" data-id="fx1"><div class="card chosen"><div class="tag" style="color:var(--deep)">Read</div><p>Stream rows straight from S3: one batched, ranged read per batch, in our sampler's order, with many reads in flight across workers.</p></div></div>
+    <div class="fixc pf" data-id="pf"><div class="card pb" data-id="pbc"><div class="tag" data-id="pbt">Problem</div><p>Each sample was downloaded from S3 only when it was needed, so every read waited on S3.</p></div><div class="card fx done" data-id="fxc"><div class="tag" data-id="fxt">Fix</div><p>Stream samples from S3 into memory ahead of time, following our pre-generated schedule, with many reads in flight across workers.</p></div></div>
   </div>
-  <aside class="notes">(~35 s) First, the reads. We stream rows straight from S3: one batched, ranged read per batch, for exactly the rows the schedule asks for, in our own sampler's order, with many reads in flight across the workers. Lance's own streaming readers want to decide the order themselves, so we kept our sampler in charge and let Lance just read rows. The read segments shrink.</aside>
+  <aside class="notes">But what if we didn't have to wait? What if we could look ahead and start reading before the GPU asked for it? We introduced streaming reads so the data was already on its way. We used our predetermined schedule to prefetch upcoming samples so reads happened ahead of need, hiding S3 latency instead of waiting on it.</aside>
 </section>
 
-<!-- T3. Fix the transform -->
+<!-- P2. Problem 2: the transform -->
+<section data-auto-animate data-auto-animate-duration="1.0">
+  <div class="bg bg-d" data-id="bg"></div>
+  <div class="layer">
+    <div class="wm" data-id="wm"></div>
+    <h2 class="h" data-id="t-h">Problem 2: the transform</h2>
+    <div class="stp" data-id="stp" style="top:560px">
+      <div class="rl" data-id="rl1" style="top:70px">GPU</div>
+      <div class="rl" data-id="rl2" style="top:214px">Data loading<small>one batch</small></div>
+      <div class="lanes">
+        <div class="ln gpu" data-id="ln-gpu"><i class="gc" data-id="gc" style="left:0;width:30.0%"><span data-id="gcs">GPU busy</span></i><i class="gw" data-id="gw" style="left:30.0%;width:31.0%"><span>GPU waiting</span></i></div>
+        <div class="ln dat" data-id="ln-dat">
+          <i class="rd dim" data-id="r1" style="left:0.0%;width:2.0%"></i>
+          <i class="rd dim" data-id="r2" style="left:2.4%;width:2.0%"></i>
+          <i class="rd dim" data-id="r3" style="left:4.8%;width:2.0%"></i>
+          <i class="rd dim" data-id="r4" style="left:7.2%;width:2.0%"></i>
+          <i class="tf" data-id="t1" style="left:9.6%;width:10.6%"></i>
+          <i class="tf" data-id="t2" style="left:20.6%;width:10.6%"></i>
+          <i class="tf" data-id="t3" style="left:31.6%;width:10.6%"></i>
+          <i class="tf" data-id="t4" style="left:42.6%;width:10.6%"></i>
+          <i class="co dim" data-id="c" style="left:53.6%;width:4.0%"></i>
+          <i class="qu dim" data-id="q" style="left:58.0%;width:3.0%"></i>
+        </div>
+        <div class="mk need" data-id="need" style="left:30.0%"><span>GPU needs the next batch</span></div>
+        <div class="mk ready" data-id="ready" style="left:61.0%"><span>batch ready</span></div>
+      </div>
+      <div class="lg" data-id="lg"><span data-id="lg-rd" class="dim"><i class="rd"></i>read a sample &times; n</span><span data-id="lg-tf"><i class="tf"></i>transform it &times; n</span><span data-id="lg-co" class="dim"><i class="co"></i>collate the batch</span><span data-id="lg-qu" class="dim"><i class="qu"></i>hand it to the GPU</span></div>
+    </div>
+    <div class="fixc pf" data-id="pf"><div class="card pb" data-id="pbc"><div class="tag" data-id="pbt">Problem</div><p>The transform expected the old record format, so every sample was converted element by element and rebuilt into it, just to be parsed again.</p></div><div class="card fx ghost" data-id="fxc"><div class="tag" data-id="fxt">Fix</div><p class="o0">Arrow buffers mem-copied straight into tensors. No per-element conversion, no rebuilding the old record format.</p></div></div>
+  </div>
+  <aside class="notes">Prefetching helped, but we were still chewing on samples too late. <b>[CLICK]</b></aside>
+</section>
+
+<!-- F2. Fix 2: a Lance-native transform -->
 <section data-auto-animate data-auto-animate-duration="1.2">
   <div class="bg bg-d" data-id="bg"></div>
   <div class="layer">
     <div class="wm" data-id="wm"></div>
     <h2 class="h" data-id="t-h">Fix 2: a Lance-native transform</h2>
-    <div class="stp">
+    <div class="stp" data-id="stp" style="top:560px">
       <div class="rl" data-id="rl1" style="top:70px">GPU</div>
       <div class="rl" data-id="rl2" style="top:214px">Data loading<small>one batch</small></div>
       <div class="lanes">
-        <div class="ln gpu" data-id="ln-gpu"><i class="gc" data-id="gc" style="left:0;width:30.0%;--d:.3s"><span data-id="gcs">compute one step</span></i><i class="gw" data-id="gw" style="left:30.0%;width:0.0%"><span>GPU waiting</span></i></div>
+        <div class="ln gpu" data-id="ln-gpu"><i class="gc" data-id="gc" style="left:0;width:30.0%"><span data-id="gcs">GPU busy</span></i><i class="gw" data-id="gw" style="left:30.0%;width:0.0%"><span>GPU waiting</span></i></div>
         <div class="ln dat" data-id="ln-dat">
           <i class="rd" data-id="r1" style="left:0.0%;width:2.0%"></i>
           <i class="rd" data-id="r2" style="left:2.4%;width:2.0%"></i>
@@ -1184,53 +1314,54 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
         <div class="mk need" data-id="need" style="left:30.0%"><span>GPU needs the next batch</span></div>
         <div class="mk ready" data-id="ready" style="left:28.5%"><span>batch ready</span></div>
       </div>
-      <div class="lg" data-id="lg"><span><i class="rd"></i>read a sample &times; n</span><span><i class="tf"></i>transform it &times; n</span><span><i class="co"></i>collate the batch</span><span><i class="qu"></i>hand it to the GPU</span></div>
+      <div class="lg" data-id="lg"><span data-id="lg-rd"><i class="rd"></i>read a sample &times; n</span><span data-id="lg-tf"><i class="tf"></i>transform it &times; n</span><span data-id="lg-co"><i class="co"></i>collate the batch</span><span data-id="lg-qu"><i class="qu"></i>hand it to the GPU</span></div>
     </div>
-    <div class="fixc two" data-id="fx2"><div class="card"><div class="tag" data-id="fx2-t1">Read</div><p>Streamed straight from S3, in our sampler's order.</p></div><div class="card chosen"><div class="tag" data-id="fx2-t2" style="color:var(--deep)">Transform</div><p>Arrow buffers mem-copied straight into tensors. No per-element conversion, no rebuilding the old record format.</p></div></div>
-    <div class="nogap pop" data-id="ng" style="--d:1.3s">The batch is ready before the GPU needs it.</div>
+    <div class="fixc pf" data-id="pf"><div class="card pb" data-id="pbc"><div class="tag" data-id="pbt">Problem</div><p>The transform expected the old record format, so every sample was converted element by element and rebuilt into it, just to be parsed again.</p></div><div class="card fx done" data-id="fxc"><div class="tag" data-id="fxt">Fix</div><p>Arrow buffers mem-copied straight into tensors. No per-element conversion, no rebuilding the old record format.</p></div></div>
+    <div class="nogap good pop" data-id="ng" style="--d:1.3s">The batch is ready before the GPU needs it.</div>
   </div>
-  <aside class="notes">(~40 s) Second, the transform. The original transform expected the old record format, so at first every sample was converted element by element and rebuilt into that record, just to be parsed again. Now it's Lance-native: the Arrow buffers are mem-copied straight into tensors, with no per-element conversion and no rebuild. The transform segments shrink, and the batch is ready before the GPU needs it. The gap is gone, and the GPU is the bottleneck again.</aside>
+  <aside class="notes">So we pushed that work down into Lance. Less Python, fuller queues. <b>[CLICK]</b></aside>
 </section>
+
 
 <!-- B1. Back to the bars -->
 <section data-auto-animate data-auto-animate-duration="1.4">
   <div class="bg bg-d" data-id="bg"></div>
   <div class="layer">
     <div class="wm" data-id="wm"></div>
-    <h2 class="h" data-id="t-h">Now every step is as fast as on FSx</h2>
+    <h2 class="h" data-id="t-h">Now training is <span class="good">5% faster</span></h2>
     <div class="sub" data-id="b-sub" style="position:absolute;left:112px;top:226px" data-auto-animate-delay="1">Same model, same schedule, same hardware.</div>
-    <div class="stp">
+    <div class="stp" data-id="stp">
       <div class="tag bt" data-id="b-tag" data-auto-animate-delay="1">Time per training step</div>
       <div class="rl o0" data-id="rl1" style="top:70px" data-auto-animate-duration=".6">GPU</div>
       <div class="rl o0" data-id="rl2" style="top:214px" data-auto-animate-duration=".6">Data loading<small>one batch</small></div>
       <div class="rl" data-id="rb1" style="top:70px" data-auto-animate-delay=".6">FSx + LMDB</div>
       <div class="rl" data-id="rb2" style="top:214px" data-auto-animate-delay=".6">S3 + Lance</div>
       <div class="lanes">
-        <div class="ln gpu" data-id="ln-gpu"><i class="gc" data-id="gc" style="left:0;width:30.0%"><span class="o0" data-id="gcs" data-auto-animate-duration=".5">compute one step</span></i><i class="gw o0" data-id="gw" style="left:30.0%;width:0.0%"><span>GPU waiting</span></i></div>
+        <div class="ln gpu" data-id="ln-gpu"><i class="gc" data-id="gc" style="left:0;width:30.0%"><span class="o0" data-id="gcs" data-auto-animate-duration=".5">GPU busy</span></i><i class="gw o0" data-id="gw" style="left:30.0%;width:0.0%"><span>GPU waiting</span></i></div>
         <div class="ln dat" data-id="ln-dat">
           <i class="lb" data-id="lb" style="left:0;width:28.5%" data-auto-animate-delay=".2" data-auto-animate-duration=".9"></i>
-          <i data-auto-animate-delay=".7" data-auto-animate-duration=".6" class="o0 rd" data-id="r1" style="left:0.0%;width:2.0%"></i>
-          <i data-auto-animate-delay=".7" data-auto-animate-duration=".6" class="o0 rd" data-id="r2" style="left:2.4%;width:2.0%"></i>
-          <i data-auto-animate-delay=".7" data-auto-animate-duration=".6" class="o0 rd" data-id="r3" style="left:4.8%;width:2.0%"></i>
-          <i data-auto-animate-delay=".7" data-auto-animate-duration=".6" class="o0 rd" data-id="r4" style="left:7.2%;width:2.0%"></i>
-          <i data-auto-animate-delay=".7" data-auto-animate-duration=".6" class="o0 tf" data-id="t1" style="left:9.6%;width:2.4%"></i>
-          <i data-auto-animate-delay=".7" data-auto-animate-duration=".6" class="o0 tf" data-id="t2" style="left:12.4%;width:2.4%"></i>
-          <i data-auto-animate-delay=".7" data-auto-animate-duration=".6" class="o0 tf" data-id="t3" style="left:15.2%;width:2.4%"></i>
-          <i data-auto-animate-delay=".7" data-auto-animate-duration=".6" class="o0 tf" data-id="t4" style="left:18.0%;width:2.4%"></i>
-          <i data-auto-animate-delay=".7" data-auto-animate-duration=".6" class="o0 co" data-id="c" style="left:20.8%;width:4.0%"></i>
-          <i data-auto-animate-delay=".7" data-auto-animate-duration=".6" class="o0 qu" data-id="q" style="left:25.2%;width:3.3%"></i>
+          <i class="rd o0" data-id="r1" style="left:0.0%;width:2.0%" data-auto-animate-delay=".7" data-auto-animate-duration=".6"></i>
+          <i class="rd o0" data-id="r2" style="left:2.4%;width:2.0%" data-auto-animate-delay=".7" data-auto-animate-duration=".6"></i>
+          <i class="rd o0" data-id="r3" style="left:4.8%;width:2.0%" data-auto-animate-delay=".7" data-auto-animate-duration=".6"></i>
+          <i class="rd o0" data-id="r4" style="left:7.2%;width:2.0%" data-auto-animate-delay=".7" data-auto-animate-duration=".6"></i>
+          <i class="tf o0" data-id="t1" style="left:9.6%;width:2.4%" data-auto-animate-delay=".7" data-auto-animate-duration=".6"></i>
+          <i class="tf o0" data-id="t2" style="left:12.4%;width:2.4%" data-auto-animate-delay=".7" data-auto-animate-duration=".6"></i>
+          <i class="tf o0" data-id="t3" style="left:15.2%;width:2.4%" data-auto-animate-delay=".7" data-auto-animate-duration=".6"></i>
+          <i class="tf o0" data-id="t4" style="left:18.0%;width:2.4%" data-auto-animate-delay=".7" data-auto-animate-duration=".6"></i>
+          <i class="co o0" data-id="c" style="left:20.8%;width:4.0%" data-auto-animate-delay=".7" data-auto-animate-duration=".6"></i>
+          <i class="qu o0" data-id="q" style="left:25.2%;width:3.3%" data-auto-animate-delay=".7" data-auto-animate-duration=".6"></i>
         </div>
         <div class="mk need o0" data-id="need" style="left:30.0%" data-auto-animate-duration=".5"><span>GPU needs the next batch</span></div>
         <div class="mk ready o0" data-id="ready" style="left:28.5%" data-auto-animate-duration=".5"><span>batch ready</span></div>
-        <div class="vc v-gpu" data-id="v1" style="left:calc(30% + 22px)" data-auto-animate-delay="1.1">1&times;</div>
-        <div class="vc v-dat" data-id="v3" style="left:calc(28.5% + 22px)" data-auto-animate-delay="1.3">0.95&times;</div>
+        <div class="vc v-gpu in" data-id="v1" style="right:calc(70% + 24px)" data-auto-animate-delay="1.1">1&times;</div>
+        <div class="vc v-dat in" data-id="v3" style="right:calc(71.5% + 24px)" data-auto-animate-delay="1.3">0.95&times;<span class="vu"> step time</span></div>
       </div>
-      <div class="lg o0" data-id="lg" data-auto-animate-duration=".5"><span><i class="rd"></i>read a sample &times; n</span><span><i class="tf"></i>transform it &times; n</span><span><i class="co"></i>collate the batch</span><span><i class="qu"></i>hand it to the GPU</span></div>
+      <div class="lg o0" data-id="lg" data-auto-animate-duration=".5"><span data-id="lg-rd"><i class="rd"></i>read a sample &times; n</span><span data-id="lg-tf"><i class="tf"></i>transform it &times; n</span><span data-id="lg-co"><i class="co"></i>collate the batch</span><span data-id="lg-qu"><i class="qu"></i>hand it to the GPU</span></div>
     </div>
-    <div class="fixc two o0" data-id="fx2" data-auto-animate-duration=".5"><div class="card"><div class="tag" data-id="fx2-t1">Read</div><p>Streamed straight from S3, in our sampler's order.</p></div><div class="card chosen"><div class="tag" data-id="fx2-t2" style="color:var(--deep)">Transform</div><p>Arrow buffers mem-copied straight into tensors. No per-element conversion, no rebuilding the old record format.</p></div></div>
-    <div class="nogap o0" data-id="ng" data-auto-animate-duration=".5">The batch is ready before the GPU needs it.</div>
+    <div class="fixc pf o0" data-id="pf" data-auto-animate-duration=".5"><div class="card pb" data-id="pbc"><div class="tag" data-id="pbt">Problem</div><p>The transform expected the old record format, so every sample was converted element by element and rebuilt into it, just to be parsed again.</p></div><div class="card fx done" data-id="fxc"><div class="tag" data-id="fxt">Fix</div><p>Arrow buffers mem-copied straight into tensors. No per-element conversion, no rebuilding the old record format.</p></div></div>
+    <div class="nogap good o0" data-id="ng" data-auto-animate-duration=".5">The batch is ready before the GPU needs it.</div>
   </div>
-  <aside class="notes">(~15 s) And back to where we started. With both fixes, a step straight from S3 takes 0.95 times as long as on FSx. Data loading finishes before the GPU needs the next batch, so the GPU sets the pace again, just like it did on FSx.</aside>
+  <aside class="notes">After the optimizations, we measured again and we were about 5% faster than our original baseline. <b>[PAUSE]</b> And that's directly from S3, no staging, no FSx headaches. So we eliminated the filesystem without compromising performance.</aside>
 </section>
 
 <!-- D5 -->
@@ -1245,10 +1376,10 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
     <div class="block">
       <div class="num grad-text rise" style="--d:.05s">05</div>
       <div class="title rise" style="--d:.2s">What we got</div>
-      <div class="subtitle rise" style="--d:.35s">Results, and what's next</div>
+      <div class="subtitle rise" style="--d:.35s">Results and engineering lessons</div>
     </div>
   </div>
-  <aside class="notes">(~3 s) Last part: what we got.</aside>
+  <aside class="notes">So we solved the performance problem. Now let's look at what we gained operationally.</aside>
 </section>
 
 <!-- 30a. Before -->
@@ -1269,7 +1400,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <div class="node card accent" data-id="n-gpu"><div class="nt">GPUs</div><div class="nd">training</div></div>
     </div>
   </div>
-  <aside class="notes">(~5 s) So, back to the picture from the start.</aside>
+  <aside class="notes">So after those two optimizations, we weren't just matching our original performance, we were actually about 5% faster, and that's directly from S3. But performance was only half the reason we started this, right? We also wanted to get rid of the operational headaches. So let's look at where we started and where we ended up. <b>[CLICK]</b> On the left is the old world: data sits in S3, but before you can train you provision FSx, stage hundreds of terabytes, then LMDB reads from that filesystem. As we saw, that means failures, hours of staging, and extra cost.</aside>
 </section>
 
 <!-- 30b. After -->
@@ -1291,7 +1422,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
     </div>
     <div class="after-line rise" style="--d:1.2s">No staging. No filesystem. <span class="hl">Same throughput.</span></div>
   </div>
-  <aside class="notes">(~15 s) The staging step goes. The filesystem goes. The LMDB reader becomes a Lance reader on S3. Data goes from the system of record straight to the GPUs, and training is just as fast.</aside>
+  <aside class="notes">Now look at the right. We've taken that whole middle layer out. <b>[PAUSE]</b> Data stays in S3, Lance reads it directly, and the optimized loader keeps the GPUs fed. No provisioning, no staging, no waiting on FSx capacity. And the key thing is, we didn't trade away performance to get here.</aside>
 </section>
 
 <!-- G. What we got -->
@@ -1306,12 +1437,30 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <div class="card rise" style="--d:.44s"><div class="k">No staging wait</div><p>Training starts as soon as the job does.</p></div>
       <div class="card rise" style="--d:.56s"><div class="k">No filesystem bill</div><p>The filesystem cost for this model goes away.</p></div>
     </div>
-    <div class="lost card chosen pop" style="--d:1s">
+    <div class="lost card chosen fragment fade-up">
       <div class="tag" style="color:var(--deep)">What we gave up</div>
-      <div class="lt">Nothing. Same training throughput and the same model quality, at production scale.</div>
+      <div class="ans fragment">
+        <div class="lt">Nothing.</div>
+        <div class="ls">Slightly better training throughput, same model quality at production scale.</div>
+      </div>
     </div>
   </div>
-  <aside class="notes">(~30 s) So what did we get? No filesystem: training reads straight from S3, with nothing to provision, stage or tear down. No capacity failures. No staging wait: training starts as soon as the job does. And the filesystem bill for this model goes away. What did we give up? Nothing. Same training throughput and the same model quality, at full production scale.</aside>
+  <aside class="notes">So stepping back, what did we actually gain? First, the filesystem is gone. We're reading straight from S3. Second, no more FSx capacity failures holding us up. Third, no more hours of staging. And yeah, we dropped the filesystem cost entirely for this workload. <b>[PAUSE]</b> <b>[CLICK]</b> And what did we give up to get all that? <b>[CLICK]</b> <b>[SLOW DOWN]</b> Nothing. We're keeping model quality, we're slightly faster, and this is at production scale.</aside>
+</section>
+
+<!-- Z. Engineering challenges -->
+<section>
+  <div class="bg bg-f"></div>
+  <div class="layer">
+    <div class="wm"></div>
+    <h2 class="h rise" style="--d:.05s">Engineering challenges &amp; lessons learned</h2>
+    <div class="engineering-cases">
+      <div class="engineering-case card rise" style="--d:0.15s"><div class="eng-head"><div class="eng-label">01 &middot; Multiprocessing</div><div class="eng-title">Fork safety with Lance + Rust</div></div><div class="eng-cell pb"><b>Problem</b><p>Loader workers hung.</p></div><div class="eng-cell"><b>Cause</b><p>Forking after Lance initialized Rust runtime threads.</p></div><div class="eng-cell fx"><b>Fix</b><p>Use <code>forkserver</code>; initialize Lance inside each worker.</p></div></div>
+      <div class="engineering-case card rise" style="--d:0.30s"><div class="eng-head"><div class="eng-label">02 &middot; Memory</div><div class="eng-title">Metadata cache pressure</div></div><div class="eng-cell pb"><b>Problem</b><p>Host memory was exhausted.</p></div><div class="eng-cell"><b>Cause</b><p>Multiple dataset handles added metadata-cache overhead.</p></div><div class="eng-cell fx"><b>Fix</b><p>Share a session and cap the metadata cache.</p></div></div>
+      <div class="engineering-case card rise" style="--d:0.45s"><div class="eng-head"><div class="eng-label">03 &middot; Distributed writes</div><div class="eng-title">S3 503 SlowDown</div></div><div class="eng-cell pb"><b>Problem</b><p>High-concurrency writes were throttled.</p></div><div class="eng-cell"><b>Cause</b><p>Many parallel writers targeting one S3 prefix.</p></div><div class="eng-cell fx"><b>Fix</b><p>Larger upload parts; exponential-backoff retries.</p></div></div>
+    </div>
+  </div>
+  <aside class="notes">So we've eliminated the filesystem, gotten rid of the operational overhead, and done all of this without sacrificing performance. But getting here wasn't entirely straightforward. We ran into a few interesting engineering challenges along the way. <b>[CLICK]</b> The first one was around Python multiprocessing and Lance's Rust runtime. Our data loader uses multiple worker processes. We discovered that when Python forks a process after Lance has initialized its Rust threads, those threads don't survive the fork properly, and that caused our workers to hang. The fix was to use forkserver-based multiprocessing and make sure Lance was initialized inside the worker process. The second issue was memory consumption. Lance maintains metadata caches, and we were creating multiple dataset handles. Each handle introduced additional caching overhead, which eventually exhausted the host's memory. We addressed that by sharing a session across dataset handles and putting a limit on the metadata cache. And finally, we ran into S3 throttling during dataset generation. We had a large number of parallel writers targeting the same S3 prefix, and we started seeing 503 SlowDown responses. We mitigated that by using larger upload parts and retries with exponential backoff. <b>[PAUSE]</b> So those were three very different problems: multiprocessing, memory management, and distributed writes. And they're a good reminder that changing your storage architecture isn't just about picking a new format. You also have to understand how that format interacts with the rest of your infrastructure.</aside>
 </section>
 
 <!-- U. S3 vs Lustre -->
@@ -1336,35 +1485,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <div class="hbar rise" style="--d:.6s;grid-template-columns:330px 1fr"><div class="name">GPU demand</div><div class="track"><div class="fill deep" style="--w:9%;--d:4.4s"></div></div></div>
     </div>
   </div>
-  <aside class="notes">(~40 s) Why does this work when S3 is slower per request than Lustre? Training doesn't need fast storage. It needs the loader never to be the slowest thing in the step. Lustre gives you fast reads one after another. S3 reads take longer, but with many of them in flight across workers, samples still arrive at the same steady rate. After the fixes, the loader can supply many times what the GPUs consume. The latency is still there; concurrency hides it. Throughput parity didn't need storage parity.</aside>
-</section>
-
-<!-- Z. What bit us, and what's next -->
-<section>
-  <div class="bg bg-f"></div>
-  <div class="layer">
-    <div class="wm"></div>
-    <h2 class="h rise" style="--d:.05s">What bit us, and what's next</h2>
-    <div class="cols c2" style="top:280px">
-      <div class="col card rise" style="--d:.2s">
-        <div class="tag">What bit us, and the fix</div>
-        <ul class="tlist hn" style="margin-top:14px">
-          <li><b>Fork.</b> Lance's Rust threads don't survive fork(), so workers hung. <span>Forkserver workers, open Lance after the fork.</span></li>
-          <li><b>Memory.</b> A metadata cache per dataset handle exhausted host memory. <span>One shared session, with the cache capped.</span></li>
-          <li><b>Writes.</b> Many parallel writers on one prefix hit S3 SlowDown. <span>Bigger upload parts, retries with backoff.</span></li>
-        </ul>
-      </div>
-      <div class="col card rise" style="--d:.4s">
-        <div class="tag">Next</div>
-        <ul class="tlist hn" style="margin-top:14px">
-          <li><b>Cache transformed samples as columns,</b> shared across runs, so later runs skip the transform too.</li>
-          <li><b>Write Lance at data generation,</b> so there's no conversion step.</li>
-          <li><b>Store data that repeats across frames once,</b> not in every row.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <aside class="notes">(~40 s) A few things bit us along the way. Lance's Rust runtime threads don't survive fork, which showed up as hung workers; forkserver workers and opening Lance after the fork fixed it. A metadata cache per dataset handle exhausted host memory; one shared session per process with a capped cache fixed that. And many parallel writers on one S3 prefix hit SlowDown; bigger upload parts and retries with backoff. What's next: caching the transformed samples as columns and sharing them across runs, so later runs skip the transform too; writing Lance at data generation so there's no conversion step; and storing data that repeats across frames once instead of in every row.</aside>
+  <aside class="notes"><b>[TRANSITION]</b> Now, stepping back from those implementation details, here's the broader lesson I want everyone to leave with. <b>[CLICK]</b> Your storage doesn't have to be the fastest thing out there. It just has to be fast enough to keep your GPUs busy. <b>[PAUSE]</b> Lustre gives really fast individual reads. With S3 each read takes longer, but with many requests in flight and prefetching, we hide that latency. As long as the loader keeps up with GPU demand, the extra latency doesn't have to touch training performance. <b>[SLOW DOWN]</b> We're not optimizing for storage latency, we're optimizing for training throughput. That's the mindset that let us drop Lustre without sacrificing performance.</aside>
 </section>
 
 <!-- 33. Thank you -->
@@ -1381,7 +1502,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <div class="meta rise" style="--d:.6s">linkedin.com/in/adharvansai</div>
     </div>
   </div>
-  <aside class="notes">(~5 s) Thank you. Happy to take questions.</aside>
+  <aside class="notes">Thanks everyone. Happy to take questions.</aside>
 </section>
 
 </div>
@@ -1432,6 +1553,15 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
     transition: 'fade', transitionSpeed: 'default', backgroundTransition: 'fade',
     autoAnimateDuration: 1.1, autoAnimateEasing: 'cubic-bezier(.65,0,.35,1)',
     pdfSeparateFragments: false, pdfMaxPagesPerSlide: 1,
+    autoAnimateMatcher: function (fromSlide, toSlide) {
+      var pairs = this.getAutoAnimatePairs(fromSlide, toSlide);
+      pairs.forEach(function (pair) {
+        if (pair.from.closest('.lanes') && pair.from.matches('.ln i, .mk, .vc')) {
+          pair.options = { translate: false, scale: false, styles: ['left', 'right', 'width', 'opacity', 'background-color', 'color'] };
+        }
+      });
+      return pairs;
+    },
     plugins: [RevealNotes]
   });
   Reveal.on('ready', function (e) { countUp(e.currentSlide); });
