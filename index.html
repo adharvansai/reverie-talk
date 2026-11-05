@@ -774,7 +774,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
   <div class="layer">
     <div class="wordmark-big pop" style="position:absolute;left:480px;top:367px;width:960px;height:213px;background-size:contain;background-repeat:no-repeat;--d:.2s" data-wm></div>
   </div>
-  <aside class="notes">Conference opener. Advance when introduced.</aside>
+  <aside class="notes"><div data-k="cue" style="margin:.45em 0;color:#C8325A;font-weight:700;letter-spacing:.04em">Conference opener. Advance when introduced.</div></aside>
 </section>
 
 <!-- 1. Title -->
@@ -792,7 +792,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <div class="by rise" style="--d:.75s">Adharvan Jakkula &middot; HPC Engineer, Zoox</div>
     </div>
   </div>
-  <aside class="notes">Hey everyone, thanks for being here. I'm AJ, and I work on HPC Data and Storage Infrastructure at Zoox. Like a lot of teams, we rely on high-performance storage to keep our GPUs fed. But at our scale, that infrastructure brings its own pain: provisioning failures, hours of staging, and real cost. So we asked ourselves, what if we could eliminate that filesystem entirely and train directly from S3 without giving up performance? That's the journey I want to walk you through today.</aside>
+  <aside class="notes"><div data-k="open" style="margin:.55em 0"><b style="color:#7A5BA6">&#9656;</b> "Hey everyone, thanks for being here. I'm AJ, and I work on HPC Data and Storage Infrastructure at Zoox."</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; Like a lot of teams, we rely on high-performance storage to keep our GPUs fed</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; At our scale, it brings its own pain: provisioning failures, hours of staging, real cost</div><div data-k="punch" style="margin:.65em 0;font-weight:700;font-size:1.1em">&#9733; "What if we could eliminate that filesystem entirely and train directly from S3, without giving up performance?"</div><div data-k="next" style="margin:.55em 0;color:#555"><b>&rarr;</b> "That's the journey I want to walk you through today."</div></aside>
 </section>
 
 <!-- 4. Agenda -->
@@ -811,7 +811,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <div class="row rise" style="--d:.55s"><div class="sq">5</div>What we got<span class="hint">Results and engineering lessons</span></div>
     </div>
   </div>
-  <aside class="notes">Here's the plan. First, I'll show you the workload we're dealing with. Then we'll look at what we tried, where things went wrong, and what finally got us the performance we wanted. <b>[CLICK]</b> So, let's start with the workload. What exactly are we dealing with here?</aside>
+  <aside class="notes"><div data-k="open" style="margin:.55em 0"><b style="color:#7A5BA6">&#9656;</b> "Here's the plan."</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; The workload we're dealing with</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; What we tried, where things went wrong</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; What finally got us the performance we wanted</div><div data-k="cue" style="margin:.45em 0;color:#C8325A;font-weight:700;letter-spacing:.04em">[CLICK]</div><div data-k="next" style="margin:.55em 0;color:#555"><b>&rarr;</b> "So, let's start with the workload. What exactly are we dealing with here?"</div></aside>
 </section>
 
 <!-- D1 -->
@@ -829,7 +829,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <div class="subtitle rise" style="--d:.35s">What training needs from storage</div>
     </div>
   </div>
-  <aside class="notes">So let's talk about the workload for a second.</aside>
+  <aside class="notes"><div data-k="open" style="margin:.55em 0"><b style="color:#7A5BA6">&#9656;</b> "So let's talk about the workload for a second."</div></aside>
 </section>
 
 <!-- W. The data -->
@@ -854,7 +854,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <div class="stat card rise" style="--d:.9s"><div class="bar"></div><div class="num">Millions<span class="unit"> of samples</span></div><div class="lbl">in every training run</div></div>
     </div>
   </div>
-  <aside class="notes">We're talking about multimodal sensor data, millions of samples, hundreds of terabytes for a single training run. <b>[CLICK]</b> But it's not just the size, it's how we have to access it.</aside>
+  <aside class="notes"><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; Multimodal sensor data</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; Millions of samples</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; Hundreds of terabytes for a single training run</div><div data-k="cue" style="margin:.45em 0;color:#C8325A;font-weight:700;letter-spacing:.04em">[CLICK]</div><div data-k="punch" style="margin:.65em 0;font-weight:700;font-size:1.1em">&#9733; "But it's not just the size, it's how we have to access it."</div></aside>
 </section>
 
 <!-- 7. The schedule -->
@@ -874,7 +874,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <div class="tbl"><div class="rows"><div class="r"><span class="a">0</span><span class="b">0</span><span class="c">a4c123…@1719179419893</span></div><div class="r"><span class="a">1</span><span class="b">0</span><span class="c">12dd27…@1725979544025</span></div><div class="r"><span class="a">2</span><span class="b">0</span><span class="c">d1371c…@1717949539216</span></div><div class="r"><span class="a">3</span><span class="b">0</span><span class="c">49d439…@1719929179284</span></div><div class="r"><span class="a">4</span><span class="b">0</span><span class="c">36b321…@1719658625969</span></div><div class="r"><span class="a">5</span><span class="b">0</span><span class="c">fdaeeb…@1718287489453</span></div><div class="r"><span class="a">6</span><span class="b">0</span><span class="c">5729fa…@1724427910944</span></div><div class="r"><span class="a">7</span><span class="b">0</span><span class="c">923d5a…@1723395047810</span></div><div class="r"><span class="a">0</span><span class="b">1</span><span class="c">12aabf…@1718959386986</span></div><div class="r"><span class="a">1</span><span class="b">1</span><span class="c">28f219…@1724825107365</span></div><div class="r"><span class="a">2</span><span class="b">1</span><span class="c">9cb0eb…@1721797889912</span></div><div class="r"><span class="a">3</span><span class="b">1</span><span class="c">16947c…@1725037696176</span></div><div class="r"><span class="a">4</span><span class="b">1</span><span class="c">25ec84…@1724813747417</span></div><div class="r"><span class="a">5</span><span class="b">1</span><span class="c">8dbc74…@1717356416554</span></div><div class="r"><span class="a">6</span><span class="b">1</span><span class="c">4770f5…@1722423455429</span></div><div class="r"><span class="a">7</span><span class="b">1</span><span class="c">04dba4…@1721526864997</span></div><div class="r"><span class="a">0</span><span class="b">2</span><span class="c">cccc3f…@1724019220235</span></div><div class="r"><span class="a">1</span><span class="b">2</span><span class="c">1626e5…@1721767105785</span></div><div class="r"><span class="a">2</span><span class="b">2</span><span class="c">13043b…@1719635981472</span></div><div class="r"><span class="a">3</span><span class="b">2</span><span class="c">26c48b…@1723881736719</span></div><div class="r"><span class="a">4</span><span class="b">2</span><span class="c">f33fef…@1723373021323</span></div><div class="r"><span class="a">5</span><span class="b">2</span><span class="c">243a8f…@1717099195379</span></div><div class="r"><span class="a">6</span><span class="b">2</span><span class="c">b40928…@1723521464856</span></div><div class="r"><span class="a">7</span><span class="b">2</span><span class="c">5b7a76…@1720462081170</span></div><div class="r"><span class="a">0</span><span class="b">0</span><span class="c">a4c123…@1719179419893</span></div><div class="r"><span class="a">1</span><span class="b">0</span><span class="c">12dd27…@1725979544025</span></div><div class="r"><span class="a">2</span><span class="b">0</span><span class="c">d1371c…@1717949539216</span></div><div class="r"><span class="a">3</span><span class="b">0</span><span class="c">49d439…@1719929179284</span></div><div class="r"><span class="a">4</span><span class="b">0</span><span class="c">36b321…@1719658625969</span></div><div class="r"><span class="a">5</span><span class="b">0</span><span class="c">fdaeeb…@1718287489453</span></div><div class="r"><span class="a">6</span><span class="b">0</span><span class="c">5729fa…@1724427910944</span></div><div class="r"><span class="a">7</span><span class="b">0</span><span class="c">923d5a…@1723395047810</span></div><div class="r"><span class="a">0</span><span class="b">1</span><span class="c">12aabf…@1718959386986</span></div><div class="r"><span class="a">1</span><span class="b">1</span><span class="c">28f219…@1724825107365</span></div><div class="r"><span class="a">2</span><span class="b">1</span><span class="c">9cb0eb…@1721797889912</span></div><div class="r"><span class="a">3</span><span class="b">1</span><span class="c">16947c…@1725037696176</span></div><div class="r"><span class="a">4</span><span class="b">1</span><span class="c">25ec84…@1724813747417</span></div><div class="r"><span class="a">5</span><span class="b">1</span><span class="c">8dbc74…@1717356416554</span></div><div class="r"><span class="a">6</span><span class="b">1</span><span class="c">4770f5…@1722423455429</span></div><div class="r"><span class="a">7</span><span class="b">1</span><span class="c">04dba4…@1721526864997</span></div><div class="r"><span class="a">0</span><span class="b">2</span><span class="c">cccc3f…@1724019220235</span></div><div class="r"><span class="a">1</span><span class="b">2</span><span class="c">1626e5…@1721767105785</span></div><div class="r"><span class="a">2</span><span class="b">2</span><span class="c">13043b…@1719635981472</span></div><div class="r"><span class="a">3</span><span class="b">2</span><span class="c">26c48b…@1723881736719</span></div><div class="r"><span class="a">4</span><span class="b">2</span><span class="c">f33fef…@1723373021323</span></div><div class="r"><span class="a">5</span><span class="b">2</span><span class="c">243a8f…@1717099195379</span></div><div class="r"><span class="a">6</span><span class="b">2</span><span class="c">b40928…@1723521464856</span></div><div class="r"><span class="a">7</span><span class="b">2</span><span class="c">5b7a76…@1720462081170</span></div></div></div>
     </div>
   </div>
-  <aside class="notes">We need a true global shuffle, we need correlated windows to stay together, and we need deterministic replay. So we pre-generate the full schedule ahead of training. <b>[PAUSE]</b> That schedule tells each rank exactly what it needs and when.</aside>
+  <aside class="notes"><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; We need a true global shuffle</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; We need correlated windows to stay together</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; We need deterministic replay</div><div data-k="punch" style="margin:.65em 0;font-weight:700;font-size:1.1em">&#9733; "So we pre-generate the full schedule ahead of training."</div><div data-k="cue" style="margin:.45em 0;color:#C8325A;font-weight:700;letter-spacing:.04em">[PAUSE]</div><div data-k="next" style="margin:.55em 0;color:#555"><b>&rarr;</b> "That schedule tells each rank exactly what it needs and when."</div></aside>
 </section>
 
 <!-- S. Today's setup -->
@@ -896,7 +896,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
     </div>
     <div class="bracket rise" style="left:466px;width:634px;top:765px;--d:1.9s"><span>set up again for every run</span></div>
   </div>
-  <aside class="notes">Now, let's look at how we support this workload today. S3 is our system of record because it's durable and cost effective at this scale. For training, we historically chose LMDB because it gave us efficient key value random access to individual samples, which matched our schedule well. But LMDB relies on memory-mapped files, so it needs both POSIX semantics and fast, low-latency access. That's where FSx for Lustre comes in. We stage our datasets from S3 onto FSx, giving LMDB the high-performance filesystem it expects. And for a long time, that worked well. But as we scaled, that extra layer started becoming a problem.</aside>
+  <aside class="notes"><div data-k="open" style="margin:.55em 0"><b style="color:#7A5BA6">&#9656;</b> "Now, let's look at how we support this workload today."</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; S3: system of record, durable, cost effective at this scale</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; LMDB: efficient key-value random access to samples, matched our schedule well</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; But LMDB relies on memory-mapped files: needs POSIX and fast, low-latency access</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; So FSx for Lustre: we stage datasets from S3 onto FSx for LMDB</div><div data-k="punch" style="margin:.65em 0;font-weight:700;font-size:1.1em">&#9733; "And for a long time, that worked well."</div><div data-k="next" style="margin:.55em 0;color:#555"><b>&rarr;</b> "But as we scaled, that extra layer started becoming a problem."</div></aside>
 </section>
 
 <!-- P. The price -->
@@ -920,7 +920,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <div class="card rise" style="--d:1s"><div class="v">~5× cost</div><div class="l">nearly 5× the regular cost goes to filesystem overhead</div></div>
     </div>
   </div>
-  <aside class="notes">That extra layer has real costs. Every run needs fresh FSx capacity and hours of staging before the first step. About one in four runs that need new capacity fail to start. Even when it works, we spend hours just staging. And nearly five times the regular spend goes to filesystem overhead. All to copy data that already lives in S3.</aside>
+  <aside class="notes"><div data-k="open" style="margin:.55em 0"><b style="color:#7A5BA6">&#9656;</b> "That extra layer has real costs."</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; Every run needs fresh FSx capacity, and hours of staging before the first step</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; About 1 in 4 runs that need new capacity fail to start</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; Even when it works, we spend hours just staging</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; Nearly 5x the regular spend goes to filesystem overhead</div><div data-k="punch" style="margin:.65em 0;font-weight:700;font-size:1.1em">&#9733; "All to copy data that already lives in S3."</div></aside>
 </section>
 
 <!-- 12. The question -->
@@ -934,7 +934,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <div class="display rise" style="--d:.2s">Take out the filesystem. Train <span class="hl">directly from S3</span>, with no loss in performance.</div>
     </div>
   </div>
-  <aside class="notes">Looking at these problems, the obvious question was, why not train directly from S3? But FSx is built for high throughput and low latency, and S3 is object storage with a different access model. So naturally, we were skeptical. We might get it to run, but could we do it without a significant performance hit? There's no point in saving on storage if we pay more in compute. So the goal became train from S3 without sacrificing training performance.</aside>
+  <aside class="notes"><div data-k="open" style="margin:.55em 0"><b style="color:#7A5BA6">&#9656;</b> "Looking at these problems, the obvious question was: why not train directly from S3?"</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; FSx is built for high throughput and low latency; S3 is object storage, a different access model</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; So naturally, we were skeptical: it might run, but without a significant performance hit?</div><div data-k="punch" style="margin:.65em 0;font-weight:700;font-size:1.1em">&#9733; "There's no point in saving on storage if we pay more in compute."</div><div data-k="next" style="margin:.55em 0;color:#555"><b>&rarr;</b> "So the goal became: train from S3 without sacrificing training performance."</div></aside>
 </section>
 
 <!-- D2 -->
@@ -952,7 +952,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <div class="subtitle rise" style="--d:.35s">Taking out the filesystem</div>
     </div>
   </div>
-  <aside class="notes">So we started with the simplest thing we could think of.</aside>
+  <aside class="notes"><div data-k="open" style="margin:.55em 0"><b style="color:#7A5BA6">&#9656;</b> "So we started with the simplest thing we could think of."</div></aside>
 </section>
 
 <!-- 13. Just mount S3 -->
@@ -974,7 +974,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <div class="display rise" style="--d:1.3s">The mount could not provide the mmap behavior LMDB needs.</div>
     </div>
   </div>
-  <aside class="notes">We kept LMDB and tried Mountpoint for S3. It looked easy, but LMDB needs memory mapping, and Mountpoint doesn't support that. So we couldn't just swap the filesystem. We had to rethink the format.</aside>
+  <aside class="notes"><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; We kept LMDB and tried Mountpoint for S3</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; It looked easy</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; But LMDB needs memory mapping, and Mountpoint doesn't support that</div><div data-k="punch" style="margin:.65em 0;font-weight:700;font-size:1.1em">&#9733; "So we couldn't just swap the filesystem. We had to rethink the format."</div></aside>
 </section>
 
 <!-- F. The format had to change -->
@@ -1005,7 +1005,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       </div>
     </div>
   </div>
-  <aside class="notes">So the format had to change. What would that take?</aside>
+  <aside class="notes"><div data-k="open" style="margin:.55em 0"><b style="color:#7A5BA6">&#9656;</b> "So the format had to change."</div><div data-k="next" style="margin:.55em 0;color:#555"><b>&rarr;</b> "What would that take?"</div></aside>
 </section>
 
 <!-- D3 -->
@@ -1023,7 +1023,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <div class="subtitle rise" style="--d:.35s">It works, but slower</div>
     </div>
   </div>
-  <aside class="notes">So we realized the problem wasn't just the filesystem. We needed a different data format, but we didn't want to throw away what was already working. LMDB gave us really good random access, and we had a schedule we wanted to preserve. We just needed it to work directly with S3. That's when Lance caught our eye. It looked like it could give us that access pattern without the filesystem underneath, so we converted and tried it.</aside>
+  <aside class="notes"><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; The problem wasn't just the filesystem: we needed a different data format</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; But we didn't want to throw away what was already working: LMDB's random access, our schedule</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; We just needed it to work directly with S3</div><div data-k="punch" style="margin:.65em 0;font-weight:700;font-size:1.1em">&#9733; "That's when Lance caught our eye."</div><div data-k="next" style="margin:.55em 0;color:#555"><b>&rarr;</b> "It looked like it could give us that access pattern without the filesystem underneath, so we converted and tried it."</div></aside>
 </section>
 
 <!-- L. Slower -->
@@ -1045,7 +1045,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       </div>
     </div>
   </div>
-  <aside class="notes">And this time it actually worked. <b>[PAUSE]</b> But then we measured it. Our training throughput dropped by about 65%. <b>[PAUSE]</b> Put differently, training was taking almost three times as long.</aside>
+  <aside class="notes"><div data-k="open" style="margin:.55em 0"><b style="color:#7A5BA6">&#9656;</b> "And this time it actually worked."</div><div data-k="cue" style="margin:.45em 0;color:#C8325A;font-weight:700;letter-spacing:.04em">[PAUSE]</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; "But then we measured it."</div><div data-k="punch" style="margin:.65em 0;font-weight:700;font-size:1.1em">&#9733; "Our training throughput dropped by about 65%."</div><div data-k="cue" style="margin:.45em 0;color:#C8325A;font-weight:700;letter-spacing:.04em">[PAUSE]</div><div data-k="next" style="margin:.55em 0;color:#555"><b>&rarr;</b> "Put differently, training was taking almost three times as long."</div></aside>
 </section>
 
 <!-- 20. How a data loader feeds a GPU -->
@@ -1093,7 +1093,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <span class="t">what the GPUs consume</span>
     </div>
   </div>
-  <aside class="notes">So before we talk about what went wrong, here's how data loading works for us. The GPU trains on one batch while a group of workers fetch and prepare the next ones. We keep a queue, like a buffer, so ideally there's always another batch ready when the GPU finishes. <b>[GESTURE FIRST DIAGRAM]</b> But here's what we saw. With Lance on S3, preparing batches sometimes took longer, the queue drained, and the GPU had nothing to do. <b>[GESTURE SECOND DIAGRAM]</b> So the issue wasn't that S3 can't store the data. It was how efficiently we were getting it into the GPU. That's what we needed to fix.</aside>
+  <aside class="notes"><div data-k="open" style="margin:.55em 0"><b style="color:#7A5BA6">&#9656;</b> "So before we talk about what went wrong, here's how data loading works for us."</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; The GPU trains on one batch while workers fetch and prepare the next ones</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; We keep a queue, like a buffer: ideally another batch is always ready</div><div data-k="cue" style="margin:.45em 0;color:#C8325A;font-weight:700;letter-spacing:.04em">[GESTURE FIRST DIAGRAM]</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; "But here's what we saw": with Lance on S3, preparing batches took longer, the queue drained, the GPU had nothing to do</div><div data-k="cue" style="margin:.45em 0;color:#C8325A;font-weight:700;letter-spacing:.04em">[GESTURE SECOND DIAGRAM]</div><div data-k="punch" style="margin:.65em 0;font-weight:700;font-size:1.1em">&#9733; "So the issue wasn't that S3 can't store the data. It was how efficiently we were getting it into the GPU."</div><div data-k="next" style="margin:.55em 0;color:#555"><b>&rarr;</b> "That's what we needed to fix."</div></aside>
 </section>
 
 <!-- D4 -->
@@ -1111,7 +1111,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <div class="subtitle rise" style="--d:.35s">Closing the gap</div>
     </div>
   </div>
-  <aside class="notes">At this point, we knew two things. We could train from S3, but we were still 2.8 times slower, and now we knew why. The GPUs were waiting on data. So the question became, how do we keep those GPUs busy? Instead of making S3 behave like Lustre, we rethought the data loader. We found two opportunities, how we read data from S3 and how we processed it afterwards, and fixing those made all the difference. Let's start with the first.</aside>
+  <aside class="notes"><div data-k="open" style="margin:.55em 0"><b style="color:#7A5BA6">&#9656;</b> "At this point, we knew two things."</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; We could train from S3, but we were still 2.8x slower</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; And now we knew why: the GPUs were waiting on data</div><div data-k="punch" style="margin:.65em 0;font-weight:700;font-size:1.1em">&#9733; "So the question became: how do we keep those GPUs busy?"</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; Instead of making S3 behave like Lustre, we rethought the data loader</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; Two opportunities: how we read data from S3, and how we processed it afterwards</div><div data-k="next" style="margin:.55em 0;color:#555"><b>&rarr;</b> "Fixing those made all the difference. Let's start with the first."</div></aside>
 </section>
 
 <!-- B0. The slowdown, again -->
@@ -1145,7 +1145,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       </div>
     </div>
   </div>
-  <aside class="notes">We saw the slower training step. Let's trace the waiting time to the data loader.</aside>
+  <aside class="notes"><div data-k="open" style="margin:.55em 0"><b style="color:#7A5BA6">&#9656;</b> "We saw the slower training step."</div><div data-k="next" style="margin:.55em 0;color:#555"><b>&rarr;</b> "Let's trace the waiting time to the data loader."</div></aside>
 </section>
 
 <!-- T1. Why the GPU waits -->
@@ -1185,7 +1185,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
     </div>
     <div class="fixc" data-id="fx0" data-auto-animate-delay="1.8" data-auto-animate-duration=".7"><div class="card"><div class="tag">One training step</div><p>For every batch, the loader reads n samples, transforms each one, collates them and hands the batch over. Batches arrived far slower than the GPU could use them.</p></div></div>
   </div>
-  <aside class="notes">The GPU finishes its work, but the next batch is not ready. Each sample is read, transformed, and collated before the GPU can continue.</aside>
+  <aside class="notes"><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; The GPU finishes its work, but the next batch is not ready</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; Each sample is read, transformed, and collated before the GPU can continue</div></aside>
 </section>
 
 <!-- P1. Problem 1: the reads -->
@@ -1219,7 +1219,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
     <div class="fixc o0" data-id="fx0"><div class="card"><div class="tag">One training step</div><p>For every batch, the loader reads n samples, transforms each one, collates them and hands the batch over. Batches arrived far slower than the GPU could use them.</p></div></div>
     <div class="fixc pf" data-id="pf"><div class="card pb" data-id="pbc"><div class="tag" data-id="pbt">Problem</div><p>Each sample was downloaded from S3 only when it was needed, so every read waited on S3.</p></div><div class="card fx ghost" data-id="fxc"><div class="tag" data-id="fxt">Fix</div><p class="o0">Stream samples from S3 into memory ahead of time, following our pre-generated schedule, with many reads in flight across workers.</p></div></div>
   </div>
-  <aside class="notes">First we looked at how we read from S3. We already know exactly which samples we need ahead of time, but we weren't really using that. We waited for each request, and those little latencies added up. <b>[CLICK]</b></aside>
+  <aside class="notes"><div data-k="open" style="margin:.55em 0"><b style="color:#7A5BA6">&#9656;</b> "First we looked at how we read from S3."</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; We already know exactly which samples we need ahead of time</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; But we weren't really using that</div><div data-k="punch" style="margin:.65em 0;font-weight:700;font-size:1.1em">&#9733; "We waited for each request, and those little latencies added up."</div><div data-k="cue" style="margin:.45em 0;color:#C8325A;font-weight:700;letter-spacing:.04em">[CLICK]</div></aside>
 </section>
 
 <!-- F1. Fix 1: stream the reads -->
@@ -1252,7 +1252,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
     </div>
     <div class="fixc pf" data-id="pf"><div class="card pb" data-id="pbc"><div class="tag" data-id="pbt">Problem</div><p>Each sample was downloaded from S3 only when it was needed, so every read waited on S3.</p></div><div class="card fx done" data-id="fxc"><div class="tag" data-id="fxt">Fix</div><p>Stream samples from S3 into memory ahead of time, following our pre-generated schedule, with many reads in flight across workers.</p></div></div>
   </div>
-  <aside class="notes">But what if we didn't have to wait? What if we could look ahead and start reading before the GPU asked for it? We introduced streaming reads so the data was already on its way. We used our predetermined schedule to prefetch upcoming samples so reads happened ahead of need, hiding S3 latency instead of waiting on it.</aside>
+  <aside class="notes"><div data-k="open" style="margin:.55em 0"><b style="color:#7A5BA6">&#9656;</b> "But what if we didn't have to wait?"</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; What if we could look ahead, and start reading before the GPU asked for it?</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; We introduced streaming reads, so the data was already on its way</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; We used our predetermined schedule to prefetch upcoming samples, ahead of need</div><div data-k="punch" style="margin:.65em 0;font-weight:700;font-size:1.1em">&#9733; "Hiding S3 latency instead of waiting on it."</div></aside>
 </section>
 
 <!-- P2. Problem 2: the transform -->
@@ -1285,7 +1285,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
     </div>
     <div class="fixc pf" data-id="pf"><div class="card pb" data-id="pbc"><div class="tag" data-id="pbt">Problem</div><p>The transform expected the old record format, so every sample was converted element by element and rebuilt into it, just to be parsed again.</p></div><div class="card fx ghost" data-id="fxc"><div class="tag" data-id="fxt">Fix</div><p class="o0">Arrow buffers mem-copied straight into tensors. No per-element conversion, no rebuilding the old record format.</p></div></div>
   </div>
-  <aside class="notes">Prefetching helped, but we were still chewing on samples too late. <b>[CLICK]</b></aside>
+  <aside class="notes"><div data-k="open" style="margin:.55em 0"><b style="color:#7A5BA6">&#9656;</b> "Prefetching helped, but we were still chewing on samples too late."</div><div data-k="cue" style="margin:.45em 0;color:#C8325A;font-weight:700;letter-spacing:.04em">[CLICK]</div></aside>
 </section>
 
 <!-- F2. Fix 2: a Lance-native transform -->
@@ -1319,7 +1319,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
     <div class="fixc pf" data-id="pf"><div class="card pb" data-id="pbc"><div class="tag" data-id="pbt">Problem</div><p>The transform expected the old record format, so every sample was converted element by element and rebuilt into it, just to be parsed again.</p></div><div class="card fx done" data-id="fxc"><div class="tag" data-id="fxt">Fix</div><p>Arrow buffers mem-copied straight into tensors. No per-element conversion, no rebuilding the old record format.</p></div></div>
     <div class="nogap good pop" data-id="ng" style="--d:1.3s">The batch is ready before the GPU needs it.</div>
   </div>
-  <aside class="notes">So we pushed that work down into Lance. Less Python, fuller queues. <b>[CLICK]</b></aside>
+  <aside class="notes"><div data-k="punch" style="margin:.65em 0;font-weight:700;font-size:1.1em">&#9733; "So we pushed that work down into Lance."</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; "Less Python, fuller queues."</div><div data-k="cue" style="margin:.45em 0;color:#C8325A;font-weight:700;letter-spacing:.04em">[CLICK]</div></aside>
 </section>
 
 
@@ -1361,7 +1361,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
     <div class="fixc pf o0" data-id="pf" data-auto-animate-duration=".5"><div class="card pb" data-id="pbc"><div class="tag" data-id="pbt">Problem</div><p>The transform expected the old record format, so every sample was converted element by element and rebuilt into it, just to be parsed again.</p></div><div class="card fx done" data-id="fxc"><div class="tag" data-id="fxt">Fix</div><p>Arrow buffers mem-copied straight into tensors. No per-element conversion, no rebuilding the old record format.</p></div></div>
     <div class="nogap good o0" data-id="ng" data-auto-animate-duration=".5">The batch is ready before the GPU needs it.</div>
   </div>
-  <aside class="notes">After the optimizations, we measured again and we were about 5% faster than our original baseline. <b>[PAUSE]</b> And that's directly from S3, no staging, no FSx headaches. So we eliminated the filesystem without compromising performance.</aside>
+  <aside class="notes"><div data-k="open" style="margin:.55em 0"><b style="color:#7A5BA6">&#9656;</b> "After the optimizations, we measured again."</div><div data-k="punch" style="margin:.65em 0;font-weight:700;font-size:1.1em">&#9733; "We were about 5% faster than our original baseline."</div><div data-k="cue" style="margin:.45em 0;color:#C8325A;font-weight:700;letter-spacing:.04em">[PAUSE]</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; And that's directly from S3: no staging, no FSx headaches</div><div data-k="next" style="margin:.55em 0;color:#555"><b>&rarr;</b> "So we eliminated the filesystem without compromising performance."</div></aside>
 </section>
 
 <!-- D5 -->
@@ -1379,7 +1379,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <div class="subtitle rise" style="--d:.35s">Results and engineering lessons</div>
     </div>
   </div>
-  <aside class="notes">So we solved the performance problem. Now let's look at what we gained operationally.</aside>
+  <aside class="notes"><div data-k="open" style="margin:.55em 0"><b style="color:#7A5BA6">&#9656;</b> "So we solved the performance problem."</div><div data-k="next" style="margin:.55em 0;color:#555"><b>&rarr;</b> "Now let's look at what we gained operationally."</div></aside>
 </section>
 
 <!-- 30a. Before -->
@@ -1400,7 +1400,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <div class="node card accent" data-id="n-gpu"><div class="nt">GPUs</div><div class="nd">training</div></div>
     </div>
   </div>
-  <aside class="notes">So after those two optimizations, we weren't just matching our original performance, we were actually about 5% faster, and that's directly from S3. But performance was only half the reason we started this, right? We also wanted to get rid of the operational headaches. So let's look at where we started and where we ended up. <b>[CLICK]</b> On the left is the old world: data sits in S3, but before you can train you provision FSx, stage hundreds of terabytes, then LMDB reads from that filesystem. As we saw, that means failures, hours of staging, and extra cost.</aside>
+  <aside class="notes"><div data-k="open" style="margin:.55em 0"><b style="color:#7A5BA6">&#9656;</b> "After those two optimizations, we weren't just matching our original performance, we were actually about 5% faster, directly from S3."</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; "But performance was only half the reason we started this, right?"</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; We also wanted to get rid of the operational headaches</div><div data-k="next" style="margin:.55em 0;color:#555"><b>&rarr;</b> "So let's look at where we started and where we ended up."</div><div data-k="cue" style="margin:.45em 0;color:#C8325A;font-weight:700;letter-spacing:.04em">[CLICK]</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; The old world: data sits in S3, you provision FSx, stage hundreds of terabytes, then LMDB reads from that filesystem</div><div data-k="punch" style="margin:.65em 0;font-weight:700;font-size:1.1em">&#9733; "As we saw, that means failures, hours of staging, and extra cost."</div></aside>
 </section>
 
 <!-- 30b. After -->
@@ -1422,7 +1422,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
     </div>
     <div class="after-line rise" style="--d:1.2s">No staging. No filesystem. <span class="hl">Same throughput.</span></div>
   </div>
-  <aside class="notes">Now look at the right. We've taken that whole middle layer out. <b>[PAUSE]</b> Data stays in S3, Lance reads it directly, and the optimized loader keeps the GPUs fed. No provisioning, no staging, no waiting on FSx capacity. And the key thing is, we didn't trade away performance to get here.</aside>
+  <aside class="notes"><div data-k="punch" style="margin:.65em 0;font-weight:700;font-size:1.1em">&#9733; "We've taken that whole middle layer out."</div><div data-k="cue" style="margin:.45em 0;color:#C8325A;font-weight:700;letter-spacing:.04em">[PAUSE]</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; Data stays in S3, Lance reads it directly, the optimized loader keeps the GPUs fed</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; No provisioning, no staging, no waiting on FSx capacity</div><div data-k="next" style="margin:.55em 0;color:#555"><b>&rarr;</b> "And the key thing is, we didn't trade away performance to get here."</div></aside>
 </section>
 
 <!-- G. What we got -->
@@ -1445,7 +1445,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       </div>
     </div>
   </div>
-  <aside class="notes">So stepping back, what did we actually gain? First, the filesystem is gone. We're reading straight from S3. Second, no more FSx capacity failures holding us up. Third, no more hours of staging. And yeah, we dropped the filesystem cost entirely for this workload. <b>[PAUSE]</b> <b>[CLICK]</b> And what did we give up to get all that? <b>[CLICK]</b> <b>[SLOW DOWN]</b> Nothing. We're keeping model quality, we're slightly faster, and this is at production scale.</aside>
+  <aside class="notes"><div data-k="open" style="margin:.55em 0"><b style="color:#7A5BA6">&#9656;</b> "So stepping back, what did we actually gain?"</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; The filesystem is gone: we're reading straight from S3</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; No more FSx capacity failures holding us up</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; No more hours of staging</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; And yeah, we dropped the filesystem cost entirely for this workload</div><div data-k="cue" style="margin:.45em 0;color:#C8325A;font-weight:700;letter-spacing:.04em">[PAUSE] [CLICK]</div><div data-k="open" style="margin:.55em 0"><b style="color:#7A5BA6">&#9656;</b> "And what did we give up to get all that?"</div><div data-k="cue" style="margin:.45em 0;color:#C8325A;font-weight:700;letter-spacing:.04em">[CLICK] [SLOW DOWN]</div><div data-k="punch" style="margin:.65em 0;font-weight:700;font-size:1.1em">&#9733; "Nothing."</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; We're keeping model quality, we're slightly faster, and this is at production scale</div></aside>
 </section>
 
 <!-- Z. Engineering challenges -->
@@ -1460,7 +1460,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <div class="engineering-case card rise" style="--d:0.45s"><div class="eng-head"><div class="eng-label">03 &middot; Distributed writes</div><div class="eng-title">S3 503 SlowDown</div></div><div class="eng-cell pb"><b>Problem</b><p>High-concurrency writes were throttled.</p></div><div class="eng-cell"><b>Cause</b><p>Many parallel writers targeting one S3 prefix.</p></div><div class="eng-cell fx"><b>Fix</b><p>Larger upload parts; exponential-backoff retries.</p></div></div>
     </div>
   </div>
-  <aside class="notes">So we've eliminated the filesystem, gotten rid of the operational overhead, and done all of this without sacrificing performance. But getting here wasn't entirely straightforward. We ran into a few interesting engineering challenges along the way. <b>[CLICK]</b> The first one was around Python multiprocessing and Lance's Rust runtime. Our data loader uses multiple worker processes. We discovered that when Python forks a process after Lance has initialized its Rust threads, those threads don't survive the fork properly, and that caused our workers to hang. The fix was to use forkserver-based multiprocessing and make sure Lance was initialized inside the worker process. The second issue was memory consumption. Lance maintains metadata caches, and we were creating multiple dataset handles. Each handle introduced additional caching overhead, which eventually exhausted the host's memory. We addressed that by sharing a session across dataset handles and putting a limit on the metadata cache. And finally, we ran into S3 throttling during dataset generation. We had a large number of parallel writers targeting the same S3 prefix, and we started seeing 503 SlowDown responses. We mitigated that by using larger upload parts and retries with exponential backoff. <b>[PAUSE]</b> So those were three very different problems: multiprocessing, memory management, and distributed writes. And they're a good reminder that changing your storage architecture isn't just about picking a new format. You also have to understand how that format interacts with the rest of your infrastructure.</aside>
+  <aside class="notes"><div data-k="open" style="margin:.55em 0"><b style="color:#7A5BA6">&#9656;</b> "So we've eliminated the filesystem, gotten rid of the operational overhead, and done all of this without sacrificing performance."</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; "But getting here wasn't entirely straightforward. We ran into a few interesting engineering challenges along the way."</div><div data-k="cue" style="margin:.45em 0;color:#C8325A;font-weight:700;letter-spacing:.04em">[CLICK]</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; 1. Multiprocessing: Python forks after Lance starts its Rust threads; the threads don't survive, workers hang. Fix: forkserver, initialize Lance inside the worker</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; 2. Memory: multiple dataset handles, each with its own metadata cache, exhausted host memory. Fix: share a session, cap the cache</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; 3. Writes: many parallel writers on one S3 prefix hit 503 SlowDown during dataset generation. Fix: larger upload parts, exponential backoff</div><div data-k="cue" style="margin:.45em 0;color:#C8325A;font-weight:700;letter-spacing:.04em">[PAUSE]</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; "Three very different problems: multiprocessing, memory management, and distributed writes."</div><div data-k="punch" style="margin:.65em 0;font-weight:700;font-size:1.1em">&#9733; "Changing your storage architecture isn't just about picking a new format."</div><div data-k="next" style="margin:.55em 0;color:#555"><b>&rarr;</b> "You also have to understand how that format interacts with the rest of your infrastructure."</div></aside>
 </section>
 
 <!-- U. S3 vs Lustre -->
@@ -1485,7 +1485,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <div class="hbar rise" style="--d:.6s;grid-template-columns:330px 1fr"><div class="name">GPU demand</div><div class="track"><div class="fill deep" style="--w:9%;--d:4.4s"></div></div></div>
     </div>
   </div>
-  <aside class="notes"><b>[TRANSITION]</b> Now, stepping back from those implementation details, here's the broader lesson I want everyone to leave with. <b>[CLICK]</b> Your storage doesn't have to be the fastest thing out there. It just has to be fast enough to keep your GPUs busy. <b>[PAUSE]</b> Lustre gives really fast individual reads. With S3 each read takes longer, but with many requests in flight and prefetching, we hide that latency. As long as the loader keeps up with GPU demand, the extra latency doesn't have to touch training performance. <b>[SLOW DOWN]</b> We're not optimizing for storage latency, we're optimizing for training throughput. That's the mindset that let us drop Lustre without sacrificing performance.</aside>
+  <aside class="notes"><div data-k="cue" style="margin:.45em 0;color:#C8325A;font-weight:700;letter-spacing:.04em">[TRANSITION]</div><div data-k="open" style="margin:.55em 0"><b style="color:#7A5BA6">&#9656;</b> "Now, stepping back from those implementation details, here's the broader lesson I want everyone to leave with."</div><div data-k="cue" style="margin:.45em 0;color:#C8325A;font-weight:700;letter-spacing:.04em">[CLICK]</div><div data-k="punch" style="margin:.65em 0;font-weight:700;font-size:1.1em">&#9733; "Your storage doesn't have to be the fastest thing out there. It just has to be fast enough to keep your GPUs busy."</div><div data-k="cue" style="margin:.45em 0;color:#C8325A;font-weight:700;letter-spacing:.04em">[PAUSE]</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; Lustre: really fast individual reads</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; S3: each read takes longer, but with many requests in flight and prefetching, we hide that latency</div><div data-k="point" style="margin:.3em 0 .3em 1.3em">&bull; As long as the loader keeps up with GPU demand, the extra latency doesn't touch training performance</div><div data-k="cue" style="margin:.45em 0;color:#C8325A;font-weight:700;letter-spacing:.04em">[SLOW DOWN]</div><div data-k="punch" style="margin:.65em 0;font-weight:700;font-size:1.1em">&#9733; "We're not optimizing for storage latency, we're optimizing for training throughput."</div><div data-k="next" style="margin:.55em 0;color:#555"><b>&rarr;</b> "That's the mindset that let us drop Lustre without sacrificing performance."</div></aside>
 </section>
 
 <!-- 33. Thank you -->
@@ -1502,7 +1502,7 @@ html.print-pdf .lat .dots b { opacity: 1; animation: none !important; }
       <div class="meta rise" style="--d:.6s">linkedin.com/in/adharvansai</div>
     </div>
   </div>
-  <aside class="notes">Thanks everyone. Happy to take questions.</aside>
+  <aside class="notes"><div data-k="open" style="margin:.55em 0"><b style="color:#7A5BA6">&#9656;</b> "Thanks everyone. Happy to take questions."</div></aside>
 </section>
 
 </div>
